@@ -1,0 +1,3 @@
+[submodule "software/cpp/pa3_programming/json"]
+	path = software/cpp/pa3_programming/json
+	url = https://github.com/nlohmann/json.git

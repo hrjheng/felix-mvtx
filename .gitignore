@@ -1,0 +1,109 @@
+/ip_sources.txt
+/sdc_sources.txt
+/vhdl_sources.txt
+/vhdl_sources_sim.txt
+/vlog_includes.txt
+/vlog_sources.txt
+/vlog_sources_sim.txt
+
+# bitfiles
+*.bit
+*.ebc
+*.ebd
+*.ll
+*.ltx
+*.mcs
+*.msd
+*.msk
+*.prm
+*.rbd
+
+# build directories
+*build*
+
+#Python files
+*.pyc
+*/*/*/__pycache__/
+*__pycache__*
+software/py/readback
+
+# path for emacs compiler (ghdl)
+work/
+
+# path for Vivado
+/source/ip/*/*.upgrade_log
+/source/ip/.Xil/
+/vivado/*.str
+/vivado/.Xil/
+/vivado/.cxl.ies.version
+/vivado/.cxl.questasim.version
+/vivado/XCKU/
+vivado_pid*
+*.jou
+*.log
+vivado/mmi/
+
+# only include main ipcore file from ips
+#**/ip/*/*
+#!**/ip/*/*.xci
+
+# path for simvision
+*simvision*
+INCA_libs
+*.design_facts
+/sim/*/*/cov_work/
+/sim/*/scripts/design_info.hal
+irun.*
+waves.*
+
+# misc. files
+.vscode
+.DS_store
+*.orig
+*.zip
+/modules/alpide_lightweight/sim/rtl_sim/scripts/filelist_lightweight_compile_verilog.txt
+/modules/alpide_lightweight/sim/rtl_sim/scripts/filelist_lightweight_compile_vhdl.txt
+*.*~*
+*simulation_sysmon.dat
+*.bak
+modules/usb_if/software/usb_comm_server/.vs/*
+modules/usb_if/software/usb_comm_server/Debug/*
+modules/usb_if/software/usb_comm_server/Release/*
+modules/usb_if/software/usb_comm_server/x64/*
+
+# log files
+software/py/logs
+/software/py/bb_lut
+/software/py/flash_dump/*
+/software/py/subrack_verify/logs/*
+
+# c decoder
+/software/c/decoder
+/software/c/hitmap*.dat
+
+#cpp
+/software/cpp/decoder/mvtx-decoder
+
+# plotting
+/software/py/plots/*
+
+# data
+software/py/data
+
+# jupyter
+/software/jupyter/.ipynb_checkpoints/*
+
+# eye diagrams
+/software/py/eyes_csv/*
+/software/py/eyes_plot/*
+/modules/board_support_software/software/py/eyes_csv/*
+/modules/board_support_software/software/py/eyes_plot/*
+
+# daq_test
+/software/py/test_config.json
+test_config.json
+
+# emacs
+*~
+#*#
+*#*

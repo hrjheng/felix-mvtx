@@ -1,0 +1,49 @@
+{
+    "L0_12": {
+        "CHIP_0": {
+            "ITHR": 50,
+            "VCASN": 103,
+            "VCASN2": 115
+        },
+        "CHIP_1": {
+            "ITHR": 50,
+            "VCASN": 104,
+            "VCASN2": 116
+        },
+        "CHIP_2": {
+            "ITHR": 52,
+            "VCASN": 103,
+            "VCASN2": 115
+        },
+        "CHIP_3": {
+            "ITHR": 49,
+            "VCASN": 103,
+            "VCASN2": 115
+        },
+        "CHIP_4": {
+            "ITHR": 52,
+            "VCASN": 105,
+            "VCASN2": 117
+        },
+        "CHIP_5": {
+            "ITHR": 52,
+            "VCASN": 105,
+            "VCASN2": 117
+        },
+        "CHIP_6": {
+            "ITHR": 52,
+            "VCASN": 104,
+            "VCASN2": 116
+        },
+        "CHIP_7": {
+            "ITHR": 52,
+            "VCASN": 103,
+            "VCASN2": 115
+        },
+        "CHIP_8": {
+            "ITHR": 52,
+            "VCASN": 105,
+            "VCASN2": 117
+        }
+    }
+}

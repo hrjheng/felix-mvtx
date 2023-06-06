@@ -1,0 +1,48 @@
+# This is automatically generated config file for L5TO by 'config_file_generator.py'.
+
+# RU main version number (e.g. 2 for RUv2.1)
+RU_MAIN_REVISION : 2
+# RU minor version number (e.g. 1 for RUv2.1)
+RU_MINOR_REVISION : 1
+# Transition board version
+RU_TRANSITION_BOARD_VERSION : V2_5
+# see power_unit.py for choices
+POWER_BOARD_VERSION : PRODUCTION
+# POWER_BOARD_FILTER_50HZ_AC_POWER_MAINS_FREQUENCY : False for US
+POWER_BOARD_FILTER_50HZ_AC_POWER_MAINS_FREQUENCY : True
+# Hostname of the machine
+HOSTNAME : "alio2-cr1-flp194.cern.ch"
+# CRU type (O2, RUv0, NONE)
+CRU_TYPE : O2
+CHECK_CRU_HASH : True
+EXPECTED_CRU_GITHASH : 0x5DBF360A
+# CANbus setup: set to True for operating with the CANbus (don't forget to set CRU_type to None!)
+# Set to False to avoid using the CANbus
+USE_CAN_COMM : False
+# If True runs with USB connection to RDO (Requires CruType to be NONE)
+USE_RDO_USB : False
+# Serial number of the CRU (string)
+CRU_SN : "0174"
+# list of GBT links used for SWT (key) and for data/trigger (value)
+# Write None if only SWT is used
+# Write [gbtx1,gbtx2,trg] if is used, trailing None can be omitted
+LINK_DICT :
+  0: [11]
+  1: [12]
+  2: [13]
+  3: [14]
+  4: [15]
+  5: [16]
+  6: [17]
+  7: [18]
+  8: [19]
+  9: [20]
+  10: [21]
+# Layer definition INNER or OUTER
+LAYER : OUTER
+# offset resistance. 3.4 for 4.5m OB cables. +/- 0.1 for every 1m of cable.
+POWERUNIT_RESISTANCE_OFFSET_PT100 : 3.4
+# Hostname of machine running the LTU service
+LTU_HOSTNAME : "alio2-cr1-ctpctr.cern.ch"
+# Subrack
+SUBRACK : "L5TO-PP1-O-1"

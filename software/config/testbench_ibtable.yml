@@ -1,0 +1,44 @@
+# Configuration file for the testbench_ibt.py script.
+#
+# To modify this for a different local setup:
+# copy to a file called "<filename>_local.yml" and modify that one
+# The <filename>.py script will first look for the "..local.." file. If that
+# isn't found it reads this file instead
+#
+
+# RU main version number (e.g. 2 for RUv2.1)
+RU_MAIN_REVISION : 2
+# RU minor version number (e.g. 1 for RUv2.1)
+RU_MINOR_REVISION : 0
+# Transition board version
+RU_TRANSITION_BOARD_VERSION : V2_5
+# see power_unit.py for choices
+POWER_BOARD_VERSION : PRODUCTION
+# POWER_BOARD_FILTER_50HZ_AC_POWER_MAINS_FREQUENCY : False for US
+POWER_BOARD_FILTER_50HZ_AC_POWER_MAINS_FREQUENCY : True
+# Hostname of the machine
+HOSTNAME : "flpits12.cern.ch"
+# CRU type (O2, RUv0, NONE)
+CRU_TYPE : O2
+CHECK_CRU_HASH : True
+EXPECTED_CRU_GITHASH : 0x5DBF360A
+# CANbus setup: set to True for operating with the CANbus (don't forget to set CRU_type to None!)
+# Set to False to avoid using the CANbus
+USE_CAN_COMM : False
+# If True runs with USB connection to RDO (Requires CruType to be NONE)
+USE_RDO_USB : False
+# Serial number of the CRU (string)
+CRU_SN : "0188"
+# list of GBT links used for SWT (key) and for data/trigger (value)
+# Write None if only SWT is used
+# Write [gbtx1,gbtx2,trg] if is used, trailing None can be omitted
+LINK_DICT :
+  11: [10,9,10]
+# Layer definition
+LAYER : INNER
+# offset resistance. 3.4 for 4.5m OB cables. +/- 0.1 for every 1m of cable.
+POWERUNIT_RESISTANCE_OFFSET_PT100 : 3.4
+# Hostname of machine running the LTU service
+LTU_HOSTNAME : "flpits11.cern.ch"
+# Subrack
+SUBRACK : "IB-table"

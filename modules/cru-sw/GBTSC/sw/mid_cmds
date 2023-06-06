@@ -1,0 +1,129 @@
+######### Access to MID_PROTO registers via SCA-I2C #########
+######### mid_cmds version 3 - 12 Dec 2017 #########
+# Line format : 0x$ch$tr00$cmd (32 bits) 0xdata (32 bits)
+######### GBT-SCA main configuration #########
+## Enable  gpio & I2C(0..4); disable spi
+# WR-then-RD CONTROL REG B : CTRL_W_CRB(cmd=0x02) I2C(4..0) & gpio & spi & 0 ; CTRL_R_CRB(cmd=03)
+0x00050002 0xfc000000
+0x00060003 0x00000000
+## Enable  I2C(5..6); disable I2C(7..12)
+# WR-then-RD CONTROL REG C : CTRL_W_CRC(cmd=0x04) I2C(12..5) ; CTRL_R_CRC(cmd=05)
+0x00070004 0x03000000
+0x00080005 0x00000000
+## Enable  I2C(14..15); disable I2C(13) & jtag & adc
+# WR-then-RD CONTROL REG D : CTRL_W_CRD(cmd=0x06) 0 & 0 & adc & jtag & I2C(15..13) ; CTRL_R_CRD(cmd=07)
+0x00090006 0x06000000
+0x000a0007 0x00000000
+#
+######### MID_PROTO_REG0 #########
+## Set I2C#7-Ctrl-Register to: SCL=Mode0(Open-Drain); NByte=0x4(4 Bytes); I2cFreq=3(1MHz)
+# WR-then-RD I2C CONTROL REG0 : I2C_W_CTRL(cmd=0x30) I2cCh#7 ; I2C_R_CTRL(cmd=31)
+0x11110030 0x13000000
+0x11120031 0x00000000
+# Read MID_PROTO_REG0-ID : I2C_M_7B_R(cmd=0xde) @ I2cCh#7-addr=0x01 (MID_PROTO_REG0-ID) ; I2C_R_DATA3(cmd=0x71)
+0x111300de 0x01000000
+0x11140071 0x00000000
+# Read MID_PROTO_REG0-date : I2C_M_7B_R(cmd=0xde) @ I2cCh#7-addr=0x02 (MID_PROTO_REG0-date) ; I2C_R_DATA3(cmd=0x71)
+0x111500de 0x02000000
+0x11160071 0x00000000
+# Read MID_PROTO_REG0-status : I2C_M_7B_R(cmd=0xde) @ I2cCh#7-addr=0x03 (MID_PROTO_REG0-status) ; I2C_R_DATA3(cmd=0x71)
+0x111700de 0x03000000
+0x11180071 0x00000000
+# Read MID_PROTO_REG0-config :I2C_M_7B_R(cmd=0xde) @ I2cCh#7-addr=0x04 (MID_PROTO_REG0-Config) ; I2C_R_DATA3(cmd=0x71)
+0x111900de 0x04000000
+0x111a0071 0x00000000
+# Read MID_PROTO_REG0-retime :I2C_M_7B_R(cmd=0xde) @ I2cCh#7-addr=0x05 (MID_PROTO_REG0-retime) ; I2C_R_DATA3(cmd=0x71)
+0x111b00de 0x05000000
+0x111c0071 0x00000000
+#
+######### MID_PROTO_REG1 #########
+## Set I2C#8-Ctrl-Register to: SCL=Mode0(Open-Drain); NByte=0x4(4 Bytes); I2cFreq=3(1MHz)
+# WR-then-RD I2C CONTROL REG1 : I2C_W_CTRL(cmd=0x30) I2cCh#8 ; I2C_R_CTRL(cmd=31)
+0x12310030 0x13000000
+0x12320031 0x00000000
+# Read MID_PROTO_REG1-ID : I2C_M_7B_R(cmd=0xde) @ I2cCh#8-addr=0x01 (MID_PROTO_REG0-ID) ; I2C_R_DATA3(cmd=0x71)
+0x123300de 0x01000000
+0x12340071 0x00000000
+# Read MID_PROTO_REG1-date : I2C_M_7B_R(cmd=0xde) @ I2cCh#8-addr=0x02 (MID_PROTO_REG0-date) ; I2C_R_DATA3(cmd=0x71)
+0x123500de 0x02000000
+0x12360071 0x00000000
+# Read MID_PROTO_REG1-status : I2C_M_7B_R(cmd=0xde) @ I2cCh#8-addr=0x03 (MID_PROTO_REG1-status) ; I2C_R_DATA3(cmd=0x71)
+0x123700de 0x03000000
+0x12380071 0x00000000
+# Read MID_PROTO_REG1-config :I2C_M_7B_R(cmd=0xde) @ I2cCh#8-addr=0x04 (MID_PROTO_REG1-Config) ; I2C_R_DATA3(cmd=0x71)
+0x123900de 0x04000000
+0x123a0071 0x00000000
+# Read MID_PROTO_REG1-retime :I2C_M_7B_R(cmd=0xde) @ I2cCh#8-addr=0x05 (MID_PROTO_REG1-retime) ; I2C_R_DATA3(cmd=0x71)
+0x123b00de 0x05000000
+0x113c0071 0x00000000
+#
+######### MID_PROTO_LOC0 #########
+## Set I2C#0-Ctrl-Register to: SCL=Mode0(Open-Drain); NByte=0x4(4 Bytes); I2cFreq=3(1MHz)
+# WR-then-RD I2C CONTROL LOC0 : I2C_W_CTRL(cmd=0x30) I2cCh#0 ; I2C_R_CTRL(cmd=31)
+0x03510030 0x13000000
+0x03520031 0x00000000
+# Read MID_PROTO_LOC0-ID : I2C_M_7B_R(cmd=0xde) @ I2cCh#0-addr=0x01 (MID_PROTO_LOC0-ID) ; I2C_R_DATA3(cmd=0x71)
+0x035300de 0x01000000
+0x03540071 0x00000000
+# Read MID_PROTO_LOC0-date : I2C_M_7B_R(cmd=0xde) @ I2cCh#0-addr=0x02 (MID_PROTO_LOC0-date) ; I2C_R_DATA3(cmd=0x71)
+0x035500de 0x02000000
+0x03560071 0x00000000
+# Read MID_PROTO_LOC0-status : I2C_M_7B_R(cmd=0xde) @ I2cCh#0-addr=0x03 (MID_PROTO_LOC0-status) ; I2C_R_DATA3(cmd=0x71)
+0x035700de 0x03000000
+0x03580071 0x00000000
+# Read MID_PROTO_LOC0-config :I2C_M_7B_R(cmd=0xde) @ I2cCh#0-addr=0x04 (MID_PROTO_LOC0-Config) ; I2C_R_DATA3(cmd=0x71)
+0x035900de 0x04000000
+0x035a0071 0x00000000
+# Write MID_PROTO_LOC0-config 0x0c100000 :I2C_W_DATA0(cmd=0x40) ; I2C_M_7B_W(cmd=0xda) @ I2cCh#0-addr=0x04 (MID_PROTO_LOC0-Config)
+0x03610040 0x0c100000
+0x036200da 0x04000000
+# Read MID_PROTO_LOC0-config :I2C_M_7B_R(cmd=0xde) @ I2cCh#0-addr=0x04 (MID_PROTO_LOC0-Config) ; I2C_R_DATA3(cmd=0x71)
+0x036300de 0x04000000
+0x03640071 0x00000000
+# Read MID_PROTO_LOC0-retime :I2C_M_7B_R(cmd=0xde) @ I2cCh#0-addr=0x05 (MID_PROTO_LOC0-retime) ; I2C_R_DATA3(cmd=0x71)
+0x035b00de 0x05000000
+0x035c0071 0x00000000
+#
+######### MID_PROTO_LOC1 #########
+## Set I2C#1-Ctrl-Register to: SCL=Mode0(Open-Drain); NByte=0x4(4 Bytes); I2cFreq=3(1MHz)
+# WR-then-RD I2C CONTROL LOC1 : I2C_W_CTRL(cmd=0x30) I2cCh#1 ; I2C_R_CTRL(cmd=31)
+0x04710030 0x13000000
+0x04720031 0x00000000
+# Read MID_PROTO_LOC1-ID : I2C_M_7B_R(cmd=0xde) @ I2cCh#1-addr=0x01 (MID_PROTO_LOC1-ID) ; I2C_R_DATA3(cmd=0x71)
+0x047300de 0x01000000
+0x04740071 0x00000000
+# Read MID_PROTO_LOC1-date : I2C_M_7B_R(cmd=0xde) @ I2cCh#1-addr=0x02 (MID_PROTO_LOC1-date) ; I2C_R_DATA3(cmd=0x71)
+0x047500de 0x02000000
+0x04760071 0x00000000
+# Read MID_PROTO_LOC1-status : I2C_M_7B_R(cmd=0xde) @ I2cCh#1-addr=0x03 (MID_PROTO_LOC1-status) ; I2C_R_DATA3(cmd=0x71)
+0x047700de 0x03000000
+0x04780071 0x00000000
+# Read MID_PROTO_LOC1-config :I2C_M_7B_R(cmd=0xde) @ I2cCh#1-addr=0x04 (MID_PROTO_LOC1-Config) ; I2C_R_DATA3(cmd=0x71)
+0x047900de 0x04000000
+0x047a0071 0x00000000
+# Read MID_PROTO_LOC1-retime :I2C_M_7B_R(cmd=0xde) @ I2cCh#1-addr=0x05 (MID_PROTO_LOC1-retime) ; I2C_R_DATA3(cmd=0x71)
+0x047b00de 0x05000000
+0x047c0071 0x00000000
+#
+######### MID_PROTO_LOC2 #########
+## Set I2C#2-Ctrl-Register to: SCL=Mode0(Open-Drain); NByte=0x4(4 Bytes); I2cFreq=3(1MHz)
+# WR-then-RD I2C CONTROL LOC2 : I2C_W_CTRL(cmd=0x30) I2cCh#2 ; I2C_R_CTRL(cmd=31)
+0x05910030 0x13000000
+0x05920031 0x00000000
+# Read MID_PROTO_LOC2-ID : I2C_M_7B_R(cmd=0xde) @ I2cCh#2-addr=0x01 (MID_PROTO_LOC2-ID) ; I2C_R_DATA3(cmd=0x71)
+0x059300de 0x01000000
+0x05940071 0x00000000
+# Read MID_PROTO_LOC2-date : I2C_M_7B_R(cmd=0xde) @ I2cCh#2-addr=0x02 (MID_PROTO_LOC2-date) ; I2C_R_DATA3(cmd=0x71)
+0x059500de 0x02000000
+0x05960071 0x00000000
+# Read MID_PROTO_LOC2-status : I2C_M_7B_R(cmd=0xde) @ I2cCh#2-addr=0x03 (MID_PROTO_LOC2-status) ; I2C_R_DATA3(cmd=0x71)
+0x059700de 0x03000000
+0x05980071 0x00000000
+# Read MID_PROTO_LOC2-config :I2C_M_7B_R(cmd=0xde) @ I2cCh#2-addr=0x04 (MID_PROTO_LOC2-Config) ; I2C_R_DATA3(cmd=0x71)
+0x059900de 0x04000000
+0x059a0071 0x00000000
+# Read MID_PROTO_LOC2-retime :I2C_M_7B_R(cmd=0xde) @ I2cCh#2-addr=0x05 (MID_PROTO_LOC2-retime) ; I2C_R_DATA3(cmd=0x71)
+0x059b00de 0x05000000
+0x059c0071 0x00000000
+#
+######### END OF mid_cmds FILE #########

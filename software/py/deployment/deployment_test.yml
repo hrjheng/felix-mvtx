@@ -1,0 +1,34 @@
+#list of setups to run on, options are 'IB-test', 'ML-test', 'OL-test'
+SUBRACK_LIST : ['IB-test', 'ML-test', 'OL-test']
+
+#Bitfile is only used if "-b" is not supplied to deployment script
+BITFILE : '/shareFS/its/RU_bitfiles/RU_mainFPGA/v0.10.1/XCKU_top_200717_1323_3690d9e2.bit'
+FLASH_VIA_FIFO : True
+
+#List of tb configs for all of the setups
+IB_TB_CONFIG_FILE : '../../config/testbench_ibs.yml'
+OLS_TB_CONFIG_FILE : '../../config/testbench_ols.yml'
+MLS_TB_CONFIG_FILE : '../../config/testbench_mls.yml'
+
+#Daqtest configs
+IBS_DAQTEST_CONFIG_FILE : '../../config/daq_test_ibs.cfg'
+OLS_DAQTEST_CONFIG_FILE : '../../config/daq_test_ols.cfg'
+MLS_DAQTEST_CONFIG_FILE : '../../config/daq_test_mls.cfg'
+IBS_DAQTEST_EXCL0_CONFIG_FILE : '../../config/daq_test_ibs_excl_0.cfg'
+IBS_DAQTEST_EXCL2_CONFIG_FILE : '../../config/daq_test_ibs_excl_2.cfg'
+
+#Threshold configs
+THRESHOLD_IBS_CONFIG_FILE : ''
+THRESHOLD_MLS_CONFIG_FILE : '../../config/obtest_mls.cfg'
+THRESHOLD_OLS_CONFIG_FILE : '../../config/obtest_ols.cfg'
+
+#Number of tests to run
+DCTRL_TESTS_IB : 100000
+DCTRL_TESTS_OLS : 10000
+DCTRL_TESTS_MLS : 10000
+SWT_TEST : 1000000
+
+#Broken chips, skipped in dctrl test
+IB_BROKEN_CHIPS : []
+ML_BROKEN_CHIPS : [20,48,49,50,51,52,53,54,73,70]
+OL_BROKEN_CHIPS : [241]

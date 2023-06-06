@@ -1,0 +1,271 @@
+variables:
+  GIT_DEPTH: 1
+
+stages:
+  - software_check
+  - deployment
+  - rawdata_parse_check
+  - decode
+
+pylint:
+  image: gitlab-registry.cern.ch/sphenix-mvtx/felix-mvtx:pylint
+  stage: software_check
+  tags:
+    - docker
+  interruptible: true
+  coverage: '/Your code has been rated at \d+\.\d+\/10/'
+  script:
+  - pylint --version
+  - make ci_lint_check
+
+cdecode:
+  stage: software_check
+  interruptible: true
+  script:
+  - gcc --version
+  - cd software/c
+  - make
+
+cppdecode:
+  image: gitlab-registry.cern.ch/sphenix-mvtx/felix-mvtx:cdecoder
+  stage: software_check
+  tags:
+    - docker
+  interruptible: true
+  coverage: '/Your code hase been rated at \d+\.\d+\/10/'
+  script:
+  - g++ --version
+  - cd software/cpp/decoder
+  - make
+
+sh_check:
+  image: gitlab-registry.cern.ch/sphenix-mvtx/felix-mvtx:shellcheck
+  stage: software_check
+  tags:
+    - docker
+  interruptible: true
+  script:
+  - shellcheck -V
+  - make shell_check
+
+sh_check_warnings:
+  image: gitlab-registry.cern.ch/sphenix-mvtx/felix-mvtx:shellcheck
+  stage: software_check
+  tags:
+    - docker
+  when: manual
+  interruptible: true
+  allow_failure: true
+  script:
+  - shellcheck -V
+  - make shell_check_all
+
+pylint_warnings:
+  image: gitlab-registry.cern.ch/sphenix-mvtx/felix-mvtx:pylint
+  stage: software_check
+  tags:
+    - docker
+  when: manual
+  interruptible: true
+  allow_failure: true
+  coverage: '/Your code has been rated at \d+\.\d+\/10/'
+  script:
+  - make ci_lint_all
+
+config_check:
+  image: gitlab-registry.cern.ch/sphenix-mvtx/felix-mvtx:pylint
+  stage: software_check
+  tags:
+    - docker
+  interruptible: true
+  script:
+  - make config_check
+  - make yml_check
+
+#pa3jtag:
+#  stage: software_check
+#  tags:
+#    - flp
+#  interruptible: true
+#  script:
+#    - "cd software/cpp/pa3_programming"
+#    - "make"
+
+# DEPLOY
+deploy-ibs:
+  stage: deployment
+  tags:
+  - flp
+  - deployment-inner
+  when: manual
+  except:
+    variables:
+    - $CI_COMMIT_MESSAGE =~ /\[skip[ -]deploy[ -]ibs\]/
+  allow_failure: true
+  script:
+  - rm -f ~/tmp_data/*ibs*
+  - python3.9 modules/board_support_software/software/py/ci_server/deployment_request_server.py "IBS" $CI_COMMIT_REF_NAME 42072
+  - python3.9 software/py/deployment/deployment_test.py -c software/py/deployment/deployment_test_ibs_short.yml
+
+deploy-ibtable:
+  stage: deployment
+  tags:
+  - flp
+  - deployment-inner-table
+  when: manual
+  except:
+    variables:
+    - $CI_COMMIT_MESSAGE =~ /\[skip[ -]deploy[ -]ibtable\]/
+  allow_failure: true
+  script:
+  - rm -f ~/tmp_data/*ibs*
+  - python3.9 modules/board_support_software/software/py/ci_server/deployment_request_server.py "IBTABLE" $CI_COMMIT_REF_NAME 42076
+  - python3.9 software/py/deployment/deployment_test.py -c software/py/deployment/deployment_test_ibtable_short.yml
+
+deploy-mls:
+  stage: deployment
+  tags:
+  - flp
+  - deployment-middle
+  when: manual
+  except:
+    variables:
+    - $CI_COMMIT_MESSAGE =~ /\[skip[ -]deploy[ -]mls\]/
+  allow_failure: true
+  script:
+  - rm -f ~/tmp_data/*mls*
+  - python3.9 modules/board_support_software/software/py/ci_server/deployment_request_server.py "MLS" $CI_COMMIT_REF_NAME 42073
+  - python3.9 software/py/deployment/deployment_test.py -c software/py/deployment/deployment_test_mls_short.yml
+
+deploy-ols:
+  stage: deployment
+  tags:
+  - flp
+  - deployment-outer
+  when: manual
+  except:
+    variables:
+    - $CI_COMMIT_MESSAGE =~ /\[skip[ -]deploy[ -]ols\]/
+  allow_failure: true
+  script:
+  - rm -f ~/tmp_data/*ols*
+  - python3.9 modules/board_support_software/software/py/ci_server/deployment_request_server.py "OLS" $CI_COMMIT_REF_NAME 42074
+  - python3.9 software/py/deployment/deployment_test.py -c software/py/deployment/deployment_test_ols_short.yml
+
+# RAWDATA-PARSER
+parse-ibs:
+  stage: rawdata_parse_check
+  tags:
+  - flp
+  - deployment-inner
+  when: manual
+  except:
+    variables:
+    - $CI_COMMIT_MESSAGE =~ /\[skip[ -]deploy[ -]ibs\]/
+  allow_failure: true
+  script:
+  - "lz4 -d ~/tmp_data/daqtest_ibs.lz4 -c | rawdata-parser"
+  - "lz4 -d ~/tmp_data/threshold_ibs.lz4 -c | rawdata-parser"
+
+parse-ibtable:
+  stage: rawdata_parse_check
+  tags:
+  - flp
+  - deployment-inner-table
+  when: manual
+  except:
+    variables:
+    - $CI_COMMIT_MESSAGE =~ /\[skip[ -]deploy[ -]ibtable\]/
+  allow_failure: true
+  script:
+  - "lz4 -d ~/tmp_data/daqtest_ibs.lz4 -c | rawdata-parser"
+  - "lz4 -d ~/tmp_data/threshold_ibs.lz4 -c | rawdata-parser"
+
+parse-mls:
+  stage: rawdata_parse_check
+  tags:
+  - flp
+  - deployment-middle
+  when: manual
+  except:
+    variables:
+    - $CI_COMMIT_MESSAGE =~ /\[skip[ -]deploy[ -]mls\]/
+  allow_failure: true
+  script:
+  - "lz4 -d ~/tmp_data/daqtest_mls.lz4 -c | rawdata-parser"
+  - "lz4 -d ~/tmp_data/threshold_mls.lz4 -c | rawdata-parser"
+
+parse-ols:
+  stage: rawdata_parse_check
+  tags:
+  - flp
+  - deployment-outer
+  when: manual
+  except:
+    variables:
+    - $CI_COMMIT_MESSAGE =~ /\[skip[ -]deploy[ -]ols\]/
+  allow_failure: true
+  script:
+  - "lz4 -d ~/tmp_data/daqtest_ols.lz4 -c | rawdata-parser"
+  - "lz4 -d ~/tmp_data/threshold_ols.lz4 -c | rawdata-parser"
+
+# DECODE
+decode-ibs:
+  stage: decode
+  tags:
+  - flp
+  - deployment-inner
+  when: manual
+  except:
+    variables:
+    - $CI_COMMIT_MESSAGE =~ /\[skip[ -]deploy[ -]ibs\]/
+  allow_failure: true
+  script:
+  - "cd software/sh/"
+  - "./decode_ibs.sh"
+  # - "./decode_threshold_ibs.sh"
+
+decode-ibtable:
+  stage: decode
+  tags:
+  - flp
+  - deployment-inner-table
+  when: manual
+  except:
+    variables:
+    - $CI_COMMIT_MESSAGE =~ /\[skip[ -]deploy[ -]ibtable\]/
+  allow_failure: true
+  script:
+  - "cd software/sh/"
+  - "./decode_ibtable.sh"
+  # - "./decode_threshold_ibtable.sh"
+
+decode-mls:
+  stage: decode
+  tags:
+  - flp
+  - deployment-middle
+  when: manual
+  except:
+    variables:
+    - $CI_COMMIT_MESSAGE =~ /\[skip[ -]deploy[ -]mls\]/
+  allow_failure: true
+  script:
+  - "cd software/sh/"
+  - "./decode_mls.sh"
+  # - "./decode_threshold_mls.sh"
+
+decode-ols:
+  stage: decode
+  tags:
+  - flp
+  - deployment-outer
+  when: manual
+  except:
+    variables:
+    - $CI_COMMIT_MESSAGE =~ /\[skip[ -]deploy[ -]ols\]/
+  allow_failure: true
+  script:
+  - "cd software/sh/"
+  - "./decode_ols.sh"
+  # - "./decode_threshold_ols.sh"

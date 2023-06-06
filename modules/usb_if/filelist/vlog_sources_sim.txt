@@ -1,0 +1,1 @@
++incdir+$usb_if_bench source/bench/Fx3Pkg.sv

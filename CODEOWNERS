@@ -1,0 +1,64 @@
+# This is an example code owners file, lines starting with a `#` will
+# be ignored.
+
+# app/ @commented-rule
+
+# We can specifiy a default match using wildcards:
+#* @jschamba, @mlupi, @avelure
+
+# Rules defined later in the file take precedence over the rules
+# defined before.
+# This will match all files for which the file name ends in `.rb`
+#*.rb @ruby-owner
+
+# Files with a `#` can still be accesssed by escaping the pound sign
+#\#file_with_pound.rb @owner-file-with-pound
+
+# Multiple codeowners can be specified, separated by whitespace
+CODEOWNERS @jschamba @mlupi @avelure @ogrottvi @gaglieri
+
+# Both usernames or email addresses can be used to match
+# users. Everything else will be ignored. For example this will
+# specify `@legal` and a user with email `janedoe@gitlab.com` as the
+# owner for the LICENSE file
+#LICENSE @legal this_does_not_match janedoe@gitlab.com
+
+# Ending a path in a `/` will specify the code owners for every file
+# nested in that directory, on any level
+#/docs/ @all-docs
+
+# Ending a path in `/*` will specify code owners for every file in
+# that directory, but not nested deeper. This will match
+# `docs/index.md` but not `docs/projects/index.md`
+#/docs/* @root-docs
+
+# This will make a `lib` directory nested anywhere in the repository
+# match
+#lib/ @lib-owner
+
+# This will only match a `config` directory in the root of the
+# repository
+#/config/ @config-owner
+
+# If the path contains spaces, these need to be escaped like this:
+#path\ with\ spaces/ @space-owner
+
+# Definition of ownership
+software/py/daq_test.py @ogrottvi
+software/py/daq_test_configurator.py @ogrottvi
+software/config/readout_3.cfg @ogrottvi
+software/config/daq_test.cfg @ogrottvi
+
+# OB stuff
+software/sh/ob/ @freidt
+software/sh/clusterssh_tools/ @freidt
+software/sh/prepare_subrack*.sh @freidt
+software/py/obtest.py @freidt
+software/py/stave_plotter*.py @freidt
+software/py/plot_{fhr,ths,tune,dcol}*.py @freidt
+software/py/dcol_tester.py @freidt
+software/py/threshold_*.py @freidt
+software/py/analyse_working_point.py @freidt
+software/config/{ithr,mask_double_cols,noise_masks,powerunit_offsets,vcasn}/ @freidt
+software/config/ob_staves.yml @freidt
+software/config/obtest*.cfg @freidt

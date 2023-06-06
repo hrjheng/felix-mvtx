@@ -1,0 +1,16 @@
+# YML file containing the GBTx0 Chargepump DAC value.
+# When running testbench.rdo.initialize() the script will search for the board
+# serial number in this file. Whenever found, the specified value will be loaded.
+# The fallback (default) value is 12.
+# Syntax:
+# <RU SN, without leading 0>:
+#  cp_daq: <chargepump value, between 0 and 15>
+# Possibly, maintain order of increasing SN.
+28:
+  cp_dac: 14
+34:
+  cp_dac: 15
+85:
+  cp_dac: 14
+250:
+  cp_dac: 14

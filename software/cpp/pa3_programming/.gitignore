@@ -1,0 +1,6 @@
+dat_file/
+log/
+.vscode/
+.DS_Store
+*.o
+pa3jtag

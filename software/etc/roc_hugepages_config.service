@@ -1,0 +1,9 @@
+[Unit]
+Description="Configuration of hugepages on startup"
+
+[Service]
+type=oneshot
+ExecStart=/etc/flp.d/roc_hugepages_startup.sh
+
+[Install]
+WantedBy=default.target

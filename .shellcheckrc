@@ -1,0 +1,5 @@
+# Disable example
+#disable=SC2059
+
+# Enable example, see shellcheck --list-optional
+#enable=SC2059

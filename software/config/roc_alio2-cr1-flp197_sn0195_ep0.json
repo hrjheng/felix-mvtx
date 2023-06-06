@@ -1,0 +1,86 @@
+{
+  "cru": {
+    "allowRejection": "false",
+    "clock": "ttc",
+    "cruId": "0xc3",
+    "datapathMode": "packet",
+    "loopback": "false",
+    "gbtMode": "GBT",
+    "downstreamData": "CTP",
+    "ponUpstream": "true",
+    "onuAddress": "0x15",
+    "dynamicOffset": "true",
+    "triggerWindowSize": "1000",
+    "gbtEnabled": "true",
+    "userLogicEnabled": "false",
+    "runStatsEnabled": "false",
+    "userAndCommonLogicEnabled": "false",
+    "systemId": "0x20",
+    "timeFrameLength": "128"
+  },
+  "links": {
+    "enabled": "false",
+    "gbtMux": "ttc",
+    "feeId": "0x0"
+  },
+  "link0": {
+    "enabled": "true",
+    "gbtMux": "swt",
+    "feeId": "0x6018"
+  },
+  "link1": {
+    "enabled": "true",
+    "gbtMux": "swt",
+    "feeId": "0x6019"
+  },
+  "link2": {
+    "enabled": "true",
+    "gbtMux": "swt",
+    "feeId": "0x601a"
+  },
+  "link3": {
+    "enabled": "true",
+    "gbtMux": "swt",
+    "feeId": "0x601b"
+  },
+  "link4": {
+    "enabled": "true",
+    "gbtMux": "swt",
+    "feeId": "0x601c"
+  },
+  "link5": {
+    "enabled": "true",
+    "gbtMux": "swt",
+    "feeId": "0x601d"
+  },
+  "link6": {
+    "enabled": "true",
+    "gbtMux": "swt",
+    "feeId": "0x601e"
+  },
+  "link7": {
+    "enabled": "true",
+    "gbtMux": "swt",
+    "feeId": "0x601f"
+  },
+  "link8": {
+    "enabled": "true",
+    "gbtMux": "swt",
+    "feeId": "0x6020"
+  },
+  "link9": {
+    "enabled": "true",
+    "gbtMux": "swt",
+    "feeId": "0x6021"
+  },
+  "link10": {
+    "enabled": "true",
+    "gbtMux": "swt",
+    "feeId": "0x6022"
+  },
+  "link11": {
+    "enabled": "true",
+    "gbtMux": "swt",
+    "feeId": "0x6023"
+  }
+}

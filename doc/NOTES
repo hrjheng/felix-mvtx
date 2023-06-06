@@ -1,0 +1,345 @@
+# Instructions on how to setup the environment on FLP for python 3 (J. Schambach, 8/9/2018)
+
+# some development packages that might be needed (I didn't install those explicitly on my system,
+# since many of those are already installed as part of the OS install)
+
+yum install -y mysql-devel curl curl-devel  bzip2 bzip2-devel unzip autoconf automake texinfo gettext gettext-devel libtool freetype freetype-devel libpng libpng-devel sqlite sqlite-devel ncurses-devel mesa-libGLU-devel libX11-devel libXpm-devel libXext-devel libXft-devel libxml2 libxml2-devel motif motif-devel kernel-devel pciutils-devel kmod-devel bison flex perl-ExtUtils-Embed environment-modules
+
+# It is necessary to first install the latest FLP prototype software
+# I installed v0.9.2-1 as described on this web page:
+# https://alice-o2.web.cern.ch/node/153
+# !!!!!!!!!!!!! IMPORTANT!!!!!!!!!!!
+# However, don't initialize the  FLP environment, since their python variables will
+# interfere with the installation below
+
+# I find it useful to install a newer version of emacs, since CC7 emacs is pretty old:
+
+# emacs 25 install
+yum -y install libXpm-devel libjpeg-turbo-devel openjpeg-devel openjpeg2-devel turbojpeg-devel giflib-devel libtiff-devel gnutls-devel libxml2-devel GConf2-devel dbus-devel wxGTK-devel gtk3-devel
+cd /home/software
+wget http://git.savannah.gnu.org/cgit/emacs.git/snapshot/emacs-25.1.tar.gz
+tar zxf emacs-25.1.tar.gz 
+cd emacs-25.1/
+./autogen.sh 
+./configure 
+make install
+emacs --version
+
+# install anaconda3 for python3 environment: https://www.anaconda.com/download/
+# 2/20/2019 JS: I recently upgraded anaconda which now had python3.7m instead of python3.6m
+
+export PATH="/opt/anaconda3/bin:$PATH"
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+export PYTHONPATH=/usr/local/lib
+
+# install some packages used by WP10 (needs to only be done once)
+pip install fire
+pip install pyusb
+pip install pyserial
+pip install python-can
+pip install jsonpickle
+
+# some of the instructions for  the compilation are modified from this web page:
+# https://alice-o2.web.cern.ch/node/158
+
+yum -y install wget git cmake3 graphviz doxygen
+
+
+# install the software collection devtoolset:
+yum install centos-release-scl
+yum-config-manager --enable rhel-server-rhscl-7-rpms
+yum install  devtoolset-7
+source scl_source enable devtoolset-7
+
+# this is needed for the alf client, but compilation will just skip this if not installed
+yum -y install dim
+
+cd ALICE/O2
+git clone https://github.com/AliceO2Group/Common.git
+git clone https://github.com/AliceO2Group/InfoLogger.git
+git clone https://github.com/AliceO2Group/ReadoutCard.git
+
+# not really needed:
+#git clone https://github.com/AliceO2Group/Monitoring.git
+#git clone https://github.com/AliceO2Group/Configuration.git
+
+# boost needs to be recompiled with python3. download boost v1.67.0:
+# https://dl.bintray.com/boostorg/release/1.67.0/source/
+# or
+# https://sourceforge.net/projects/boost/files/boost/1.67.0/
+
+cd /home/software
+tar zxf ~/Downloads/boost_1_67_0.tar.gz 
+cd boost_1_67_0/
+./bootstrap.sh --with-python-version=python3.7m
+
+# to get the proper include path during compilation:
+export C_INCLUDE_PATH=$C_INCLUDE_PATH:/opt/anaconda3/include/python3.7m
+export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/opt/anaconda3/include/python3.7m
+
+# or, alternatively, modify the generated file "project-config.jam" to read (watch spaces):
+
+if ! [ python.configured ]
+{
+    using python : 3.7m : /opt/anaconda3 : /opt/anaconda3/include/python3.7m : /opt/anaconda3/lib ;
+}
+
+# then compile as follows:
+
+./b2
+./b2 install
+
+cd ~/ALICE/O2/Common
+git checkout v1.3.0
+mkdir build
+cd build/
+source scl_source enable devtoolset-7
+cmake3 -DCMAKE_PREFIX_PATH="/usr/local;/opt/o2-dependencies;/opt/o2-modules" ..
+make 
+sudo make install
+
+cd ~/ALICE/O2/InfoLogger
+git checkout v1.0.9
+mkdir build
+cd build/
+source scl_source enable devtoolset-7
+cmake3 -DCMAKE_PREFIX_PATH="/usr/local;/opt/o2-dependencies;/opt/o2-modules" -DPYTHON_EXECUTABLE=/opt/anaconda3/bin/python3 -DPYTHON_INCLUDE_DIR=/opt/anaconda3/include/python3.7m -DPYTHON_LIBRARY=/opt/anaconda3/lib/libpython3.7m.so ..
+make
+sudo make install
+
+cd ~/ALICE/O2/ReadoutCard
+git checkout v0.9.2
+# Apply following two patches
+```
+diff --git a/cmake/ReadoutCardDependencies.cmake b/cmake/ReadoutCardDependencies.cmake
+index 3901ded..4a43934 100644
+--- a/cmake/ReadoutCardDependencies.cmake
++++ b/cmake/ReadoutCardDependencies.cmake
+@@ -3,7 +3,7 @@ if(APPLE)
+     set(boost_python_component "")
+ else()
+     set(rt_lib "rt")
+-    set(boost_python_component "python27")
++    set(boost_python_component "python37")
+ endif()
+```
+```
+--- a/src/Cru/cru_constants_populate.py
++++ b/src/Cru/cru_constants_populate.py
+@@ -18,17 +18,17 @@ roc_regs = {'add_bsp_hkeeping_tempstat':'TEMPERATURE',
+ # e.g. 'TEMPERATURE':0x00010008
+ to_replace = {}
+
+-for key0,value0 in roc_regs.iteritems():
+-  for key,value in table.CRUADD.iteritems():
++for key0,value0 in roc_regs.items():
++  for key,value in table.CRUADD.items():
+     if (key0 == key):
+       to_replace[value0] = '0x' + str(format(value, '08x'))
+
+-print to_replace
++print(to_replace)
+
+ cfile = open('Constants.h')
+ contents = cfile.readlines()
+
+-for key,value in to_replace.iteritems():
++for key,value in to_replace.items():
+   for (i, line) in enumerate(contents):
+     if (key in line):
+       contents[i] = re.sub("\([^)]*\)", '(' + value + ')', line)
+```
+mkdir build
+cd build/
+source scl_source enable devtoolset-7
+cmake3 -DCMAKE_PREFIX_PATH="/usr/local;/opt/o2-dependencies;/opt/o2-modules" -DPYTHON_EXECUTABLE=/opt/anaconda3/bin/python3 -DPYTHON_INCLUDE_DIR=/opt/anaconda3/include/python3.7m -DPYTHON_LIBRARY=/opt/anaconda3/lib/libpython3.7m.so -DDIM_ROOT=/opt/dim -Wno-dev ..
+make
+sudo make install
+
+# after all of that, libO2ReadoutCard is now available to be imported in python3.
+# as an example, one can now do the following (in folder software/py):
+
+export PATH="/opt/anaconda3/bin:$PATH"
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+export PYTHONPATH=/usr/local/lib
+
+# check the link status of the configured links:
+./testbench.py cru gbt checkLinkLockStatus
+
+# interaction with the SCA:
+./testbench.py cru initialize --gbt_ch=0
+./testbench.py cru read_adcs_conv
+
+# interaction with the RU via SWT:
+# first switch the GBT TX mux to SWT downloads:
+./testbench.py cru setGbtTxMux 2
+# to switch back to TTC ("trigger") instead of SWT download, use same command with "0" instead of "2"
+
+# if necessary, we can reset the CRU core to remove any data left in the SWT FIFOs:
+./testbench.py cru reset_sc_cores
+
+
+# now we can read the status flag:
+printf "0x%x\n" `./testbench.py rdo comm rdMon`
+
+# and finally we are able to read a register from RUv2:
+printf "0x%x\n" `./testbench.py rdo read 1 0`
+./testbench.py version
+
+#
+#
+# Bringing up the CRUv2:
+# (use a separate shell, since all the python scripts below are using Python 2.7 from O2.)
+#
+# First, setup the O2 environment for the CRU:
+eval `module load ReadoutCard/v0.28.0-1`
+
+# verify that card is seen: should show two PCI CRU cards:
+o2-roc-list-cards
+
+# then load the latest .sof file into the Arria-X, and reboot to have the OS recognize the PCI interface
+# Currently used firmware tag: v2.3.0
+# 10/12/2018: now upgraded to firmware tag v2.4.0
+# 10/26/2018: now upgraded to firmware tag 2.5.0 and software tag v2.5.1
+# 11/21/2018: upgraded to firmware tag v2.6.0 and software tag v2.6.0
+# Cernbox link for bitfile:
+#https://cernbox.cern.ch/index.php/s/mWIgJy1OC3817TR
+# The Quartus software needs to be installed to load the firmware into the Arria:
+export QUARTUS_ROOTDIR=/opt/intelFPGA_pro/17.0/quartus
+export PATH=$QUARTUS_ROOTDIR/bin:$QUARTUS_ROOTDIR/sopc_builder/bin:$QUARTUS_ROOTDIR/linux64/jre64/bin:$PATH
+# and then use the programmer GUI
+quartus_pgmw
+
+# Use the "Hardware Setup" button to select the correct board (recognized as "PCIe40 xxx")
+# Then use the "Auto Detect" button to configure the JTAG chain (it is not important to check the correct Arria
+# model in the popup window, since this information is contained in the bitfile and will be changed appropriately,
+# when the bitfile is chosen in the next step)
+# The JTAG chain should result in a chain consisting of one Arria 10 ("10A..."), one PLD ("5M2210Z"), and one
+# flash device connected to the PLD.
+# Right-Click on the line for the Arria, and in the popup menu, select "Change File".
+# In the File-Selector popup, choose the correct .sof file to load.
+# Then a popup window informs that the file is incompatible with the target device, if the wrong device
+# was chosen in the previous steps. Click "Yes" to replace the programming file, which will then also
+# change the Arria device in the JTAG chain.
+# Finally, select the "Program/Configure" checkbox in the Arria row, and press "Start" to start loading
+# this bit file into the Arria.
+# During the programming, the CentOS will complain "Dazed and confused..." which is OK, since it just lost
+# connection to the PCIe interface previously contained in the Arria.
+# After the programming completes successfully, simply reboot the FLP in order of the BIOS to recognize
+# the newly loaded PCIe interface (don't power cycle!).
+
+
+# after reboot, from the cru-sw repository root directory:
+cd cru-sw/COMMON
+
+# This is only necessary if the board has been power cycled to setup the clocks:
+cd ../I2C/sw
+python si534x_i2c.py -i 3b:0.0 -c config-pll -p2 -y regmap_for_glib.txt
+
+# calibrate firmware:
+cd cru-sw/COMMON
+python standalone-startup.py -i 3b:0.0 -c local
+
+# at this point the GBT links should be running and the RU can be connected.
+# to verify the GBT RX channel:
+cd cru-sw/COMMON
+python linkstat.py -i 3b:0.0 -l0-3 -v
+cd ../I2C/sw/minipod
+python mprx-opt-pwr.py -i 3b:0.0
+
+
+#
+#
+# 9/6/2018: First attempt at data readout
+# (updated 10/17/2018)
+#
+
+# e.g. setup the module to readout over GPIO connector 1:
+./testbench.py cru setGbtTxMux 2 # choose SC as TX downstream data
+./testbench.py rdo powerunit-1 initialize
+./testbench.py rdo dctrl disable_dclk
+./testbench.py powerunit setup_power_IB --bb=0.0
+./testbench.py powerunit power-on-IB --module=0 --backbias_en=0
+./testbench.py rdo dctrl enable_dclk
+# setup for outer barrel:
+./testbench.py  test-readout-gpio-setup-sensors 1 True
+# alternatively, for inner barrel:
+./testbench.py setup_sensors
+./testbench.py setup_readout
+
+# also, e.g. enable some pulsers:
+./testbench.py clear-pulser
+./testbench.py setup-pulser 3
+./testbench.py rdo trigger-handler configure-to-send-pulses
+
+
+# setup the proper CRU configuration:
+./testbench.py setup-its-readout-test
+./testbench.py cru setGbtTxMux 0 # choose TTC as TX downstream data
+
+# in a separate shell, with the O2 environment setup:
+o2-roc-setup-hugetlbfs
+mkdir /tmp/ramdisk
+mount -t tmpfs -o size=2048M tmpfs /tmp/ramdisk
+
+# this command is probably not necessary:
+#o2-roc-reg-write --id=3b:0.0 --channel=0 --address=0xc00 --value=0x2
+
+o2-roc-bench-dma --verbose   --id=3b:0.0   --buffer-size=128Mi --superpage-size=2Mi --links=0-31  --no-errorche --bytes=2048Mi  --to-file-bin=/tmp/ramdisk/output.bin --loopback=NONE --generator=0
+
+# then again in the WP10 shell:
+
+./testbench.py cru bsp enableRun
+# this sends a SOT trigger command:
+./testbench.py cru ttc setEmulatorTrigMode "manual"
+./testbench.py cru ttc doManualPhysTrig # send a "PHYSICS" trigger
+./testbench.py cru ttc doManualPhysTrig # send a "PHYSICS" trigger
+# this sends an EOT trigger command
+./testbench.py cru ttc setEmulatorIdleMode
+
+# turn off the sensors after disabling the data path:
+./testbench.py cru setGbtTxMux 2 # choose SWT as TX downstream data
+./testbench.py rdo gpio enable-data 0 # or gth for IB
+./testbench.py rdo powerunit-1 power-off-all
+
+# in the O2 shell, Ctrl-C out of the DMA program.
+
+# To dump the resulting file (from the software/py folder):
+python eventDump.py /tmp/ramdisk/output.bin | more
+
+# Instead of the o2-roc-bench-dma program, one can also use the o2-readout-exe program to acquire data:
+# https://github.com/AliceO2Group/Readout
+# The format generated by this program is similar to the one generated by o2-roc-bench-dma.
+# This program needs a configuration file to determine the source and sink of data. This
+# file is located in the folder ./software/config. To use this, execute in the shell that
+# would have been used for o2-roc-bench-dma program:
+
+# this command is probably not necessary:
+#o2-roc-reg-write --id=3b:0.0 --channel=0 --address=0xc00 --value=0x2
+
+o2-readout-exe file://root/ALICE/CRU_ITS/software/config/readout.cfg
+
+# and then proceed as above with sending the commands in the WP10 shell to send triggers
+
+# HOWTO setup a loopback test through the FPGA:
+./testbench.py cru initialize --gbt_ch=0
+./testbench.py cru sca initialize
+./testbench.py rdo gbtx01_controller set-tx-pattern 3
+
+
+./testbench.py cru gbt txmode "gbt"
+./testbench.py cru gbt rxmode "gbt"
+
+./testbench.py cru gbt patternmode "counter"
+./testbench.py cru gbt txcountertype "8bit" 
+
+./testbench.py cru gbt internalDataGenerator 1
+./testbench.py cru gbt cntrst
+
+# wait some time, then get statistics on errors
+./testbench.py cru gbt stat
+./testbench.py cru gbt internalDataGenerator 0
+
+./testbench.py cru sca set-xcku-reset 1;  ./testbench.py cru sca set-xcku-reset 0 
+
+

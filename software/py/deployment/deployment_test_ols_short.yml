@@ -1,0 +1,55 @@
+#list of setups to run on, options are 'IB-test', 'ML-test', 'OL-test'
+SUBRACK_LIST : ['OL-test']
+
+# If set true, will ignore any skipTest checks
+# This allows running individual tests, specifying TestClass.testFunction
+IGNORE_CHECKS : False
+# Skips WET tests
+SKIP_WET : False
+
+#Bitfile is only used if "-b" is not supplied to deployment script
+BITFILE : '/shareFS/its/RU_bitfiles/RU_mainFPGA/v1.18.0/XCKU_top_221107_1020_109ac916.bit'
+FLASH_VIA_FIFO : True
+
+#List of tb configs for all of the setups
+IB_TB_CONFIG_FILE  : None
+MLS_TB_CONFIG_FILE : None
+OLS_TB_CONFIG_FILE : '../../config/testbench_ols.yml'
+
+#Daqtest configs
+IBS_DAQTEST_CONFIG_FILE : None
+MLS_DAQTEST_CONFIG_FILE : None
+OLS_DAQTEST_CONFIG_FILE : '../../config/daq_test_ols_short.cfg'
+IBS_DAQTEST_EXCL0_CONFIG_FILE : None
+IBS_DAQTEST_EXCL2_CONFIG_FILE : None
+
+#Threshold configs
+THRESHOLD_IBS_CONFIG_FILE : None
+THRESHOLD_MLS_CONFIG_FILE : None
+THRESHOLD_OLS_CONFIG_FILE : '../../config/threshold_ols.cfg'
+
+#Number of tests to run
+DCTRL_TESTS_IB : 100
+DCTRL_TESTS_OLS : 10
+DCTRL_TESTS_MLS : 10
+SWT_TEST : 10000
+
+#Broken chips, skipped in dctrl test
+IB_BROKEN_CHIPS : []
+ML_BROKEN_CHIPS : []
+OL_BROKEN_CHIPS : [241]
+
+# Powerunit Controller tests
+POWERUNIT      : 1
+# Power off test parameter
+MAX_BB_VOLTAGE : 2400 # -3.0V
+MAX_BB_CURRENT : 800  # 50 mA
+MAX_VOLTAGE    : 500  # roughly off
+MAX_CURRENT    : 500  # roughly off
+MAX_TMP        : 40
+MIN_TMP        : 15
+# Powerunit temperature interlock
+EXT1           : True
+EXT2           : False
+# Powerunit monitor test cycles
+MONITOR_CYCLES: 10

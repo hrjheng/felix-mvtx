@@ -1,0 +1,2253 @@
+{
+    "L0_00": {
+        "CHIP_0": {
+            "ITHR": 49,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_1": {
+            "ITHR": 52,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_2": {
+            "ITHR": 50,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_3": {
+            "ITHR": 48,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_4": {
+            "ITHR": 52,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_5": {
+            "ITHR": 48,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_6": {
+            "ITHR": 52,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_7": {
+            "ITHR": 48,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_8": {
+            "ITHR": 52,
+            "VCASN": 95,
+            "VCASN2": 107
+        }
+    },
+    "L0_01": {
+        "CHIP_0": {
+            "ITHR": 52,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_1": {
+            "ITHR": 51,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_2": {
+            "ITHR": 47,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_3": {
+            "ITHR": 51,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_4": {
+            "ITHR": 52,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_5": {
+            "ITHR": 51,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_6": {
+            "ITHR": 49,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_7": {
+            "ITHR": 48,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_8": {
+            "ITHR": 52,
+            "VCASN": 101,
+            "VCASN2": 113
+        }
+    },
+    "L0_02": {
+        "CHIP_0": {
+            "ITHR": 50,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_1": {
+            "ITHR": 53,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_2": {
+            "ITHR": 49,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_3": {
+            "ITHR": 48,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_4": {
+            "ITHR": 51,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_5": {
+            "ITHR": 50,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_6": {
+            "ITHR": 48,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_7": {
+            "ITHR": 49,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_8": {
+            "ITHR": 51,
+            "VCASN": 98,
+            "VCASN2": 110
+        }
+    },
+    "L0_03": {
+        "CHIP_0": {
+            "ITHR": 55,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_1": {
+            "ITHR": 47,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_2": {
+            "ITHR": 55,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_3": {
+            "ITHR": 50,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_4": {
+            "ITHR": 51,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_5": {
+            "ITHR": 48,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_6": {
+            "ITHR": 49,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_7": {
+            "ITHR": 47,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_8": {
+            "ITHR": 52,
+            "VCASN": 96,
+            "VCASN2": 108
+        }
+    },
+    "L0_04": {
+        "CHIP_0": {
+            "ITHR": 53,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_1": {
+            "ITHR": 51,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_2": {
+            "ITHR": 49,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_3": {
+            "ITHR": 50,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_4": {
+            "ITHR": 49,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_5": {
+            "ITHR": 48,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_6": {
+            "ITHR": 53,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_7": {
+            "ITHR": 53,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_8": {
+            "ITHR": 49,
+            "VCASN": 99,
+            "VCASN2": 111
+        }
+    },
+    "L0_05": {
+        "CHIP_0": {
+            "ITHR": 50,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_1": {
+            "ITHR": 51,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_2": {
+            "ITHR": 50,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_3": {
+            "ITHR": 51,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_4": {
+            "ITHR": 50,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_5": {
+            "ITHR": 48,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_6": {
+            "ITHR": 50,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_7": {
+            "ITHR": 53,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_8": {
+            "ITHR": 49,
+            "VCASN": 98,
+            "VCASN2": 110
+        }
+    },
+    "L0_06": {
+        "CHIP_0": {
+            "ITHR": 50,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_1": {
+            "ITHR": 55,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_2": {
+            "ITHR": 54,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_3": {
+            "ITHR": 55,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_4": {
+            "ITHR": 52,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_5": {
+            "ITHR": 55,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_6": {
+            "ITHR": 49,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_7": {
+            "ITHR": 48,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_8": {
+            "ITHR": 54,
+            "VCASN": 95,
+            "VCASN2": 107
+        }
+    },
+    "L0_07": {
+        "CHIP_0": {
+            "ITHR": 47,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_1": {
+            "ITHR": 49,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_2": {
+            "ITHR": 51,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_3": {
+            "ITHR": 51,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_4": {
+            "ITHR": 47,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_5": {
+            "ITHR": 49,
+            "VCASN": 102,
+            "VCASN2": 114
+        },
+        "CHIP_6": {
+            "ITHR": 52,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_7": {
+            "ITHR": 49,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_8": {
+            "ITHR": 50,
+            "VCASN": 101,
+            "VCASN2": 113
+        }
+    },
+    "L0_08": {
+        "CHIP_0": {
+            "ITHR": 52,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_1": {
+            "ITHR": 51,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_2": {
+            "ITHR": 48,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_3": {
+            "ITHR": 53,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_4": {
+            "ITHR": 49,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_5": {
+            "ITHR": 55,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_6": {
+            "ITHR": 48,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_7": {
+            "ITHR": 50,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_8": {
+            "ITHR": 52,
+            "VCASN": 99,
+            "VCASN2": 111
+        }
+    },
+    "L0_09": {
+        "CHIP_0": {
+            "ITHR": 51,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_1": {
+            "ITHR": 55,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_2": {
+            "ITHR": 48,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_3": {
+            "ITHR": 53,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_4": {
+            "ITHR": 52,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_5": {
+            "ITHR": 49,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_6": {
+            "ITHR": 53,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_7": {
+            "ITHR": 47,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_8": {
+            "ITHR": 48,
+            "VCASN": 99,
+            "VCASN2": 111
+        }
+    },
+    "L0_10": {
+        "CHIP_0": {
+            "ITHR": 49,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_1": {
+            "ITHR": 48,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_2": {
+            "ITHR": 50,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_3": {
+            "ITHR": 50,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_4": {
+            "ITHR": 52,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_5": {
+            "ITHR": 49,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_6": {
+            "ITHR": 53,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_7": {
+            "ITHR": 48,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_8": {
+            "ITHR": 53,
+            "VCASN": 101,
+            "VCASN2": 113
+        }
+    },
+    "L0_11": {
+        "CHIP_0": {
+            "ITHR": 51,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_1": {
+            "ITHR": 51,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_2": {
+            "ITHR": 52,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_3": {
+            "ITHR": 51,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_4": {
+            "ITHR": 52,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_5": {
+            "ITHR": 48,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_6": {
+            "ITHR": 52,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_7": {
+            "ITHR": 50,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_8": {
+            "ITHR": 49,
+            "VCASN": 100,
+            "VCASN2": 112
+        }
+    },
+    "L1_00": {
+        "CHIP_0": {
+            "ITHR": 53,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_1": {
+            "ITHR": 55,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_2": {
+            "ITHR": 51,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_3": {
+            "ITHR": 52,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_4": {
+            "ITHR": 51,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_5": {
+            "ITHR": 51,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_6": {
+            "ITHR": 49,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_7": {
+            "ITHR": 50,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_8": {
+            "ITHR": 53,
+            "VCASN": 95,
+            "VCASN2": 107
+        }
+    },
+    "L1_01": {
+        "CHIP_0": {
+            "ITHR": 55,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_1": {
+            "ITHR": 50,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_2": {
+            "ITHR": 50,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_3": {
+            "ITHR": 50,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_4": {
+            "ITHR": 49,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_5": {
+            "ITHR": 48,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_6": {
+            "ITHR": 50,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_7": {
+            "ITHR": 55,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_8": {
+            "ITHR": 54,
+            "VCASN": 95,
+            "VCASN2": 107
+        }
+    },
+    "L1_02": {
+        "CHIP_0": {
+            "ITHR": 55,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_1": {
+            "ITHR": 55,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_2": {
+            "ITHR": 53,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_3": {
+            "ITHR": 51,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_4": {
+            "ITHR": 54,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_5": {
+            "ITHR": 49,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_6": {
+            "ITHR": 49,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_7": {
+            "ITHR": 51,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_8": {
+            "ITHR": 48,
+            "VCASN": 96,
+            "VCASN2": 108
+        }
+    },
+    "L1_03": {
+        "CHIP_0": {
+            "ITHR": 50,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_1": {
+            "ITHR": 52,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_2": {
+            "ITHR": 49,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_3": {
+            "ITHR": 52,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_4": {
+            "ITHR": 53,
+            "VCASN": 102,
+            "VCASN2": 114
+        },
+        "CHIP_5": {
+            "ITHR": 51,
+            "VCASN": 103,
+            "VCASN2": 115
+        },
+        "CHIP_6": {
+            "ITHR": 49,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_7": {
+            "ITHR": 48,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_8": {
+            "ITHR": 51,
+            "VCASN": 103,
+            "VCASN2": 115
+        }
+    },
+    "L1_04": {
+        "CHIP_0": {
+            "ITHR": 55,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_1": {
+            "ITHR": 55,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_2": {
+            "ITHR": 49,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_3": {
+            "ITHR": 55,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_4": {
+            "ITHR": 48,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_5": {
+            "ITHR": 55,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_6": {
+            "ITHR": 54,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_7": {
+            "ITHR": 50,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_8": {
+            "ITHR": 48,
+            "VCASN": 97,
+            "VCASN2": 109
+        }
+    },
+    "L1_05": {
+        "CHIP_0": {
+            "ITHR": 50,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_1": {
+            "ITHR": 49,
+            "VCASN": 102,
+            "VCASN2": 114
+        },
+        "CHIP_2": {
+            "ITHR": 49,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_3": {
+            "ITHR": 48,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_4": {
+            "ITHR": 47,
+            "VCASN": 102,
+            "VCASN2": 114
+        },
+        "CHIP_5": {
+            "ITHR": 52,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_6": {
+            "ITHR": 54,
+            "VCASN": 102,
+            "VCASN2": 114
+        },
+        "CHIP_7": {
+            "ITHR": 51,
+            "VCASN": 102,
+            "VCASN2": 114
+        },
+        "CHIP_8": {
+            "ITHR": 50,
+            "VCASN": 100,
+            "VCASN2": 112
+        }
+    },
+    "L1_06": {
+        "CHIP_0": {
+            "ITHR": 50,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_1": {
+            "ITHR": 48,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_2": {
+            "ITHR": 50,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_3": {
+            "ITHR": 51,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_4": {
+            "ITHR": 49,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_5": {
+            "ITHR": 51,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_6": {
+            "ITHR": 49,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_7": {
+            "ITHR": 53,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_8": {
+            "ITHR": 49,
+            "VCASN": 96,
+            "VCASN2": 108
+        }
+    },
+    "L1_07": {
+        "CHIP_0": {
+            "ITHR": 50,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_1": {
+            "ITHR": 52,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_2": {
+            "ITHR": 53,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_3": {
+            "ITHR": 50,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_4": {
+            "ITHR": 51,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_5": {
+            "ITHR": 48,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_6": {
+            "ITHR": 50,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_7": {
+            "ITHR": 51,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_8": {
+            "ITHR": 52,
+            "VCASN": 102,
+            "VCASN2": 114
+        }
+    },
+    "L1_08": {
+        "CHIP_0": {
+            "ITHR": 55,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_1": {
+            "ITHR": 49,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_2": {
+            "ITHR": 53,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_3": {
+            "ITHR": 53,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_4": {
+            "ITHR": 52,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_5": {
+            "ITHR": 49,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_6": {
+            "ITHR": 49,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_7": {
+            "ITHR": 50,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_8": {
+            "ITHR": 47,
+            "VCASN": 98,
+            "VCASN2": 110
+        }
+    },
+    "L1_09": {
+        "CHIP_0": {
+            "ITHR": 52,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_1": {
+            "ITHR": 52,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_2": {
+            "ITHR": 52,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_3": {
+            "ITHR": 48,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_4": {
+            "ITHR": 47,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_5": {
+            "ITHR": 51,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_6": {
+            "ITHR": 53,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_7": {
+            "ITHR": 51,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_8": {
+            "ITHR": 52,
+            "VCASN": 101,
+            "VCASN2": 113
+        }
+    },
+    "L1_10": {
+        "CHIP_0": {
+            "ITHR": 51,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_1": {
+            "ITHR": 53,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_2": {
+            "ITHR": 53,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_3": {
+            "ITHR": 52,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_4": {
+            "ITHR": 53,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_5": {
+            "ITHR": 48,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_6": {
+            "ITHR": 52,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_7": {
+            "ITHR": 49,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_8": {
+            "ITHR": 53,
+            "VCASN": 98,
+            "VCASN2": 110
+        }
+    },
+    "L1_11": {
+        "CHIP_0": {
+            "ITHR": 53,
+            "VCASN": 102,
+            "VCASN2": 114
+        },
+        "CHIP_1": {
+            "ITHR": 49,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_2": {
+            "ITHR": 47,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_3": {
+            "ITHR": 48,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_4": {
+            "ITHR": 50,
+            "VCASN": 102,
+            "VCASN2": 114
+        },
+        "CHIP_5": {
+            "ITHR": 51,
+            "VCASN": 102,
+            "VCASN2": 114
+        },
+        "CHIP_6": {
+            "ITHR": 48,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_7": {
+            "ITHR": 48,
+            "VCASN": 102,
+            "VCASN2": 114
+        },
+        "CHIP_8": {
+            "ITHR": 49,
+            "VCASN": 102,
+            "VCASN2": 114
+        }
+    },
+    "L1_12": {
+        "CHIP_0": {
+            "ITHR": 53,
+            "VCASN": 103,
+            "VCASN2": 115
+        },
+        "CHIP_1": {
+            "ITHR": 50,
+            "VCASN": 102,
+            "VCASN2": 114
+        },
+        "CHIP_2": {
+            "ITHR": 51,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_3": {
+            "ITHR": 51,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_4": {
+            "ITHR": 50,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_5": {
+            "ITHR": 49,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_6": {
+            "ITHR": 51,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_7": {
+            "ITHR": 48,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_8": {
+            "ITHR": 52,
+            "VCASN": 99,
+            "VCASN2": 111
+        }
+    },
+    "L1_13": {
+        "CHIP_0": {
+            "ITHR": 48,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_1": {
+            "ITHR": 52,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_2": {
+            "ITHR": 53,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_3": {
+            "ITHR": 52,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_4": {
+            "ITHR": 52,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_5": {
+            "ITHR": 50,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_6": {
+            "ITHR": 48,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_7": {
+            "ITHR": 52,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_8": {
+            "ITHR": 49,
+            "VCASN": 101,
+            "VCASN2": 113
+        }
+    },
+    "L1_14": {
+        "CHIP_0": {
+            "ITHR": 53,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_1": {
+            "ITHR": 53,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_2": {
+            "ITHR": 49,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_3": {
+            "ITHR": 50,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_4": {
+            "ITHR": 50,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_5": {
+            "ITHR": 47,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_6": {
+            "ITHR": 50,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_7": {
+            "ITHR": 53,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_8": {
+            "ITHR": 52,
+            "VCASN": 101,
+            "VCASN2": 113
+        }
+    },
+    "L1_15": {
+        "CHIP_0": {
+            "ITHR": 50,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_1": {
+            "ITHR": 50,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_2": {
+            "ITHR": 53,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_3": {
+            "ITHR": 50,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_4": {
+            "ITHR": 47,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_5": {
+            "ITHR": 48,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_6": {
+            "ITHR": 52,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_7": {
+            "ITHR": 52,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_8": {
+            "ITHR": 49,
+            "VCASN": 100,
+            "VCASN2": 112
+        }
+    },
+    "L2_00": {
+        "CHIP_0": {
+            "ITHR": 51,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_1": {
+            "ITHR": 49,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_2": {
+            "ITHR": 50,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_3": {
+            "ITHR": 48,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_4": {
+            "ITHR": 47,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_5": {
+            "ITHR": 50,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_6": {
+            "ITHR": 52,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_7": {
+            "ITHR": 52,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_8": {
+            "ITHR": 48,
+            "VCASN": 98,
+            "VCASN2": 110
+        }
+    },
+    "L2_01": {
+        "CHIP_0": {
+            "ITHR": 48,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_1": {
+            "ITHR": 48,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_2": {
+            "ITHR": 50,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_3": {
+            "ITHR": 49,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_4": {
+            "ITHR": 50,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_5": {
+            "ITHR": 51,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_6": {
+            "ITHR": 48,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_7": {
+            "ITHR": 51,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_8": {
+            "ITHR": 50,
+            "VCASN": 97,
+            "VCASN2": 109
+        }
+    },
+    "L2_02": {
+        "CHIP_0": {
+            "ITHR": 51,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_1": {
+            "ITHR": 53,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_2": {
+            "ITHR": 49,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_3": {
+            "ITHR": 52,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_4": {
+            "ITHR": 49,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_5": {
+            "ITHR": 51,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_6": {
+            "ITHR": 49,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_7": {
+            "ITHR": 50,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_8": {
+            "ITHR": 50,
+            "VCASN": 95,
+            "VCASN2": 107
+        }
+    },
+    "L2_03": {
+        "CHIP_0": {
+            "ITHR": 48,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_1": {
+            "ITHR": 51,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_2": {
+            "ITHR": 55,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_3": {
+            "ITHR": 51,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_4": {
+            "ITHR": 53,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_5": {
+            "ITHR": 48,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_6": {
+            "ITHR": 54,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_7": {
+            "ITHR": 52,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_8": {
+            "ITHR": 50,
+            "VCASN": 95,
+            "VCASN2": 107
+        }
+    },
+    "L2_04": {
+        "CHIP_0": {
+            "ITHR": 51,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_1": {
+            "ITHR": 51,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_2": {
+            "ITHR": 49,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_3": {
+            "ITHR": 51,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_4": {
+            "ITHR": 52,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_5": {
+            "ITHR": 50,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_6": {
+            "ITHR": 50,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_7": {
+            "ITHR": 50,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_8": {
+            "ITHR": 53,
+            "VCASN": 98,
+            "VCASN2": 110
+        }
+    },
+    "L2_05": {
+        "CHIP_0": {
+            "ITHR": 53,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_1": {
+            "ITHR": 53,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_2": {
+            "ITHR": 47,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_3": {
+            "ITHR": 52,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_4": {
+            "ITHR": 47,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_5": {
+            "ITHR": 51,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_6": {
+            "ITHR": 50,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_7": {
+            "ITHR": 50,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_8": {
+            "ITHR": 51,
+            "VCASN": 100,
+            "VCASN2": 112
+        }
+    },
+    "L2_06": {
+        "CHIP_0": {
+            "ITHR": 48,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_1": {
+            "ITHR": 50,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_2": {
+            "ITHR": 48,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_3": {
+            "ITHR": 48,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_4": {
+            "ITHR": 48,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_5": {
+            "ITHR": 50,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_6": {
+            "ITHR": 49,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_7": {
+            "ITHR": 53,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_8": {
+            "ITHR": 53,
+            "VCASN": 98,
+            "VCASN2": 110
+        }
+    },
+    "L2_07": {
+        "CHIP_0": {
+            "ITHR": 48,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_1": {
+            "ITHR": 52,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_2": {
+            "ITHR": 51,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_3": {
+            "ITHR": 47,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_4": {
+            "ITHR": 50,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_5": {
+            "ITHR": 51,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_6": {
+            "ITHR": 48,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_7": {
+            "ITHR": 49,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_8": {
+            "ITHR": 48,
+            "VCASN": 99,
+            "VCASN2": 111
+        }
+    },
+    "L2_08": {
+        "CHIP_0": {
+            "ITHR": 50,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_1": {
+            "ITHR": 47,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_2": {
+            "ITHR": 55,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_3": {
+            "ITHR": 53,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_4": {
+            "ITHR": 50,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_5": {
+            "ITHR": 51,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_6": {
+            "ITHR": 48,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_7": {
+            "ITHR": 49,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_8": {
+            "ITHR": 53,
+            "VCASN": 98,
+            "VCASN2": 110
+        }
+    },
+    "L2_09": {
+        "CHIP_0": {
+            "ITHR": 49,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_1": {
+            "ITHR": 51,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_2": {
+            "ITHR": 49,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_3": {
+            "ITHR": 49,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_4": {
+            "ITHR": 47,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_5": {
+            "ITHR": 48,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_6": {
+            "ITHR": 53,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_7": {
+            "ITHR": 47,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_8": {
+            "ITHR": 53,
+            "VCASN": 98,
+            "VCASN2": 110
+        }
+    },
+    "L2_10": {
+        "CHIP_0": {
+            "ITHR": 52,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_1": {
+            "ITHR": 49,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_2": {
+            "ITHR": 50,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_3": {
+            "ITHR": 48,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_4": {
+            "ITHR": 51,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_5": {
+            "ITHR": 49,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_6": {
+            "ITHR": 52,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_7": {
+            "ITHR": 51,
+            "VCASN": 102,
+            "VCASN2": 114
+        },
+        "CHIP_8": {
+            "ITHR": 49,
+            "VCASN": 101,
+            "VCASN2": 113
+        }
+    },
+    "L2_11": {
+        "CHIP_0": {
+            "ITHR": 50,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_1": {
+            "ITHR": 47,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_2": {
+            "ITHR": 51,
+            "VCASN": 102,
+            "VCASN2": 114
+        },
+        "CHIP_3": {
+            "ITHR": 51,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_4": {
+            "ITHR": 47,
+            "VCASN": 102,
+            "VCASN2": 114
+        },
+        "CHIP_5": {
+            "ITHR": 53,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_6": {
+            "ITHR": 50,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_7": {
+            "ITHR": 52,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_8": {
+            "ITHR": 51,
+            "VCASN": 100,
+            "VCASN2": 112
+        }
+    },
+    "L2_12": {
+        "CHIP_0": {
+            "ITHR": 50,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_1": {
+            "ITHR": 48,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_2": {
+            "ITHR": 49,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_3": {
+            "ITHR": 53,
+            "VCASN": 102,
+            "VCASN2": 114
+        },
+        "CHIP_4": {
+            "ITHR": 47,
+            "VCASN": 102,
+            "VCASN2": 114
+        },
+        "CHIP_5": {
+            "ITHR": 52,
+            "VCASN": 102,
+            "VCASN2": 114
+        },
+        "CHIP_6": {
+            "ITHR": 50,
+            "VCASN": 103,
+            "VCASN2": 115
+        },
+        "CHIP_7": {
+            "ITHR": 47,
+            "VCASN": 102,
+            "VCASN2": 114
+        },
+        "CHIP_8": {
+            "ITHR": 51,
+            "VCASN": 103,
+            "VCASN2": 115
+        }
+    },
+    "L2_13": {
+        "CHIP_0": {
+            "ITHR": 47,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_1": {
+            "ITHR": 50,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_2": {
+            "ITHR": 48,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_3": {
+            "ITHR": 51,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_4": {
+            "ITHR": 49,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_5": {
+            "ITHR": 52,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_6": {
+            "ITHR": 48,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_7": {
+            "ITHR": 49,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_8": {
+            "ITHR": 50,
+            "VCASN": 100,
+            "VCASN2": 112
+        }
+    },
+    "L2_14": {
+        "CHIP_0": {
+            "ITHR": 49,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_2": {
+            "ITHR": 48,
+            "VCASN": 102,
+            "VCASN2": 114
+        },
+        "CHIP_3": {
+            "ITHR": 52,
+            "VCASN": 102,
+            "VCASN2": 114
+        },
+        "CHIP_4": {
+            "ITHR": 51,
+            "VCASN": 103,
+            "VCASN2": 115
+        },
+        "CHIP_5": {
+            "ITHR": 48,
+            "VCASN": 102,
+            "VCASN2": 114
+        },
+        "CHIP_6": {
+            "ITHR": 50,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_7": {
+            "ITHR": 50,
+            "VCASN": 102,
+            "VCASN2": 114
+        },
+        "CHIP_8": {
+            "ITHR": 47,
+            "VCASN": 101,
+            "VCASN2": 113
+        }
+    },
+    "L2_15": {
+        "CHIP_0": {
+            "ITHR": 53,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_1": {
+            "ITHR": 48,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_2": {
+            "ITHR": 48,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_3": {
+            "ITHR": 52,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_4": {
+            "ITHR": 48,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_5": {
+            "ITHR": 50,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_6": {
+            "ITHR": 48,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_7": {
+            "ITHR": 52,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_8": {
+            "ITHR": 52,
+            "VCASN": 100,
+            "VCASN2": 112
+        }
+    },
+    "L2_16": {
+        "CHIP_0": {
+            "ITHR": 49,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_1": {
+            "ITHR": 50,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_2": {
+            "ITHR": 53,
+            "VCASN": 100,
+            "VCASN2": 112
+        },
+        "CHIP_3": {
+            "ITHR": 51,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_4": {
+            "ITHR": 48,
+            "VCASN": 99,
+            "VCASN2": 111
+        },
+        "CHIP_5": {
+            "ITHR": 50,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_6": {
+            "ITHR": 53,
+            "VCASN": 102,
+            "VCASN2": 114
+        },
+        "CHIP_7": {
+            "ITHR": 51,
+            "VCASN": 101,
+            "VCASN2": 113
+        },
+        "CHIP_8": {
+            "ITHR": 48,
+            "VCASN": 101,
+            "VCASN2": 113
+        }
+    },
+    "L2_17": {
+        "CHIP_0": {
+            "ITHR": 53,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_1": {
+            "ITHR": 48,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_2": {
+            "ITHR": 47,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_3": {
+            "ITHR": 53,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_4": {
+            "ITHR": 47,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_5": {
+            "ITHR": 50,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_6": {
+            "ITHR": 51,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_7": {
+            "ITHR": 51,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_8": {
+            "ITHR": 51,
+            "VCASN": 97,
+            "VCASN2": 109
+        }
+    },
+    "L2_18": {
+        "CHIP_0": {
+            "ITHR": 55,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_1": {
+            "ITHR": 53,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_2": {
+            "ITHR": 52,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_3": {
+            "ITHR": 53,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_4": {
+            "ITHR": 53,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_5": {
+            "ITHR": 54,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_6": {
+            "ITHR": 49,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_7": {
+            "ITHR": 50,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_8": {
+            "ITHR": 49,
+            "VCASN": 96,
+            "VCASN2": 108
+        }
+    },
+    "L2_19": {
+        "CHIP_0": {
+            "ITHR": 49,
+            "VCASN": 95,
+            "VCASN2": 107
+        },
+        "CHIP_1": {
+            "ITHR": 51,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_2": {
+            "ITHR": 49,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_3": {
+            "ITHR": 49,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_4": {
+            "ITHR": 48,
+            "VCASN": 97,
+            "VCASN2": 109
+        },
+        "CHIP_5": {
+            "ITHR": 48,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_6": {
+            "ITHR": 49,
+            "VCASN": 98,
+            "VCASN2": 110
+        },
+        "CHIP_7": {
+            "ITHR": 49,
+            "VCASN": 96,
+            "VCASN2": 108
+        },
+        "CHIP_8": {
+            "ITHR": 52,
+            "VCASN": 100,
+            "VCASN2": 112
+        }
+    }
+}

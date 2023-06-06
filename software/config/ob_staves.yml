@@ -1,0 +1,193 @@
+layer:
+  3:
+    stave:
+      03:
+        excluded-chips: [51]
+      19:
+        excluded-chips: [196]
+      24:
+        excluded-chips : [20,48,49,50,51,52,53,54,73,70,16,17,18,19,20,21,22,24,25,26,27,28,29,30,40,41,42,43,44,45,46,48,49,50,51,52,53,54,56,57,58,59,60,61,62,64,65,66,67,68,69,70,72,73,74,75,76,77,78,176,177,178,179,180,181,182,192,193,194,195,196,197,198]
+  4:
+    stave:
+      5:
+        excluded-chips: [147]
+      9:
+        excluded-chips: [34]
+      11:
+        excluded-chips: [166]
+      13:
+        excluded-chips: [203]
+      27:
+        excluded-chips: [166]
+  5:
+    stave:
+      0:
+       excluded-chips: []
+       chip:
+          72:
+           registers:
+             DriverDAC: 0x6
+      02:
+       excluded-chips: [83]
+       chip:
+          104:
+           registers:
+             DriverDAC: 0x3
+      04:
+        excluded-chips: [70, 157]
+      05:
+       excluded-chips: []
+       chip:
+          72:
+           registers:
+             DriverDAC: 0x8
+      07:
+        excluded-chips: [212]
+      09:
+        excluded-chips: []
+      11:
+        excluded-chips: [102]
+      14:
+        excluded-chips: [52]
+      15:
+        excluded-chips: [107]
+      16:
+        excluded-chips: [54]
+      18:
+        excluded-chips: [246]
+      22:
+        excluded-chips: [91]
+      23:
+        excluded-chips: []
+        chip:
+          96:
+            registers:
+              DriverDAC: 0x2
+        chip:
+          112:
+            registers:
+              DriverDAC: 0x3
+      25:
+        excluded-chips: [121]
+      27:
+        excluded-chips: []
+        chip:
+          72:
+            registers:
+              DriverDAC: 0x8
+      28:
+        excluded-chips: [153, 157]
+      32:
+        excluded-chips: [149]
+      33:
+        excluded-chips: []
+      35:
+        excluded-chips: [154,213]
+      36:
+        excluded-chips: [36]
+      41:
+        excluded-chips: [30]
+      42:
+        excluded-chips : [241, 97]
+  6:
+    stave:
+      0:
+        excluded-chips : []
+      1:
+        excluded-chips : []
+      2:
+        excluded-chips : []
+      3:
+        excluded-chips : []
+      4:
+        excluded-chips : [93,109]
+      5:
+        excluded-chips : [165,246]
+      6:
+        excluded-chips : []
+      7:
+        excluded-chips : []
+      8:
+        excluded-chips : [123]
+      9:
+        excluded-chips : []
+      10:
+        excluded-chips : []
+      11:
+        excluded-chips : []
+      12:
+        excluded-chips : []
+      13:
+        excluded-chips : []
+      14:
+        excluded-chips : []
+      15:
+        excluded-chips : []
+      16:
+        excluded-chips : []
+      17:
+        excluded-chips : []
+      18:
+        excluded-chips : []
+      19:
+        excluded-chips : []
+      20:
+        excluded-chips : []
+      21:
+        excluded-chips : []
+      22:
+        excluded-chips : [66]
+      23:
+        excluded-chips : []
+        chip:
+          144:
+            registers:
+              DriverDAC: 0x8
+      24:
+        excluded-chips : []
+      25:
+        excluded-chips : []
+      26:
+        excluded-chips : []
+      27:
+        excluded-chips : []
+      28:
+        excluded-chips : []
+      29:
+        excluded-chips : [76]
+      30:
+        excluded-chips : []
+      31:
+        excluded-chips : []
+      32:
+        excluded-chips : []
+      33:
+        excluded-chips : []
+      34:
+        excluded-chips : []
+      35:
+        excluded-chips : [82,83]
+      36:
+        excluded-chips : []
+      37:
+        excluded-chips : [204]
+      38:
+        excluded-chips : [190]
+      39:
+        excluded-chips : [109,197]
+      40:
+        excluded-chips : []
+      41:
+        excluded-chips : []
+      42:
+        excluded-chips : []
+      43:
+        excluded-chips : []
+      44:
+        excluded-chips : []
+      45:
+        excluded-chips : []
+      46:
+        excluded-chips : []
+      47:
+        excluded-chips : []

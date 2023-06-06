@@ -1,0 +1,8 @@
+{
+    "board_support_software":"modules/board_support_software"
+    "cru_support_software":"modules/cru_support_software"
+    "dcs_canbus":"modules/dcs_canbus"
+    "i2c":"modules/i2c",
+    "ltu_support_software":"modules/ltu_support_software"
+    "usb_if":"modules/usb_if"
+} 

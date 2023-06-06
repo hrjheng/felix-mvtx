@@ -1,0 +1,45 @@
+# This is automatically generated config file for L4BO by 'config_file_generator.py'.
+
+# RU main version number (e.g. 2 for RUv2.1)
+RU_MAIN_REVISION : 2
+# RU minor version number (e.g. 1 for RUv2.1)
+RU_MINOR_REVISION : 1
+# Transition board version
+RU_TRANSITION_BOARD_VERSION : V2_5
+# see power_unit.py for choices
+POWER_BOARD_VERSION : PRODUCTION
+# POWER_BOARD_FILTER_50HZ_AC_POWER_MAINS_FREQUENCY : False for US
+POWER_BOARD_FILTER_50HZ_AC_POWER_MAINS_FREQUENCY : True
+# Hostname of the machine
+HOSTNAME : "alio2-cr1-flp193.cern.ch"
+# CRU type (O2, RUv0, NONE)
+CRU_TYPE : O2
+CHECK_CRU_HASH : True
+EXPECTED_CRU_GITHASH : 0x5DBF360A
+# CANbus setup: set to True for operating with the CANbus (don't forget to set CRU_type to None!)
+# Set to False to avoid using the CANbus
+USE_CAN_COMM : False
+# If True runs with USB connection to RDO (Requires CruType to be NONE)
+USE_RDO_USB : False
+# Serial number of the CRU (string)
+CRU_SN : "0178"
+# list of GBT links used for SWT (key) and for data/trigger (value)
+# Write None if only SWT is used
+# Write [gbtx1,gbtx2,trg] if is used, trailing None can be omitted
+LINK_DICT :
+  0: [8]
+  1: [9]
+  2: [10]
+  3: [11]
+  4: [12]
+  5: [13]
+  6: [14]
+  7: [15]
+# Layer definition INNER or OUTER
+LAYER : MIDDLE
+# offset resistance. 3.4 for 4.5m OB cables. +/- 0.1 for every 1m of cable.
+POWERUNIT_RESISTANCE_OFFSET_PT100 : 3.4
+# Hostname of machine running the LTU service
+LTU_HOSTNAME : "alio2-cr1-ctpctr.cern.ch"
+# Subrack
+SUBRACK : "L4BO-PP1-O-5"
