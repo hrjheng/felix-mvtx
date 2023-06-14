@@ -989,10 +989,6 @@ void run_fhrana(struct decoder_t *decoder, string &prefix)
         }
         else if (ret == HB_DATA_DONE)
         {
-            // Initialize hitmap event-by-event
-            // uint32_t *hitmap = reinterpret_cast<uint32_t *>(_mm_malloc(3 * 1024 * 512 * sizeof(uint32_t), 4096));
-            // bzero(hitmap, 3 * 1024 * 512 * sizeof(uint32_t));
-
             evtidx++;
             nHB_with_data++;
             int nhits = decoder->hits_end - decoder->hitsbuffer;
@@ -1000,13 +996,12 @@ void run_fhrana(struct decoder_t *decoder, string &prefix)
             transformhits(decoder->hitsbuffer, nhits);
 
             // cout << "nhits = " << nhits << endl;
-            // loop over the hitsbuffer
 
             for (int i = 0; i < nhits; i++)
             {
                 // std::cout << "decoder->hitsbuffer[" << i << "] (yx from the transformhits function output) = " << std::bitset<32>(decoder->hitsbuffer[i]) << std::endl;
 
-                // Get specific bit from uint32: https://stackoverflow.com/questions/34849753/get-specific-bit-from-uint32
+                // Alternative way to get specific bit from uint32: https://stackoverflow.com/questions/34849753/get-specific-bit-from-uint32
                 // column is the first 10 bits [9th to 0th], counting from the right
                 uint32_t column = decoder->hitsbuffer[i] & 0x3FF;
                 // lane is the next 2 bits [11th and 10th], counting from the right
@@ -1029,44 +1024,11 @@ void run_fhrana(struct decoder_t *decoder, string &prefix)
                 ++unique_row_count[static_cast<int>(row)];
             }
 
-            // if (nhits < 0)
-            // {
-            //     printf("\nERROR IN EVENT %d\n", nHB);
-            //     printf("POS: %d\n", (int)decoder->file.tellg());
-            // }
-            // else
-            // {
-            //     fillhitmap(hitmap, decoder->hitsbuffer, nhits);
-            // }
-
-            // // hitmap per event
-            // size_t ntot[decoder->nlanes] = {0, 0, 0};
-            // size_t ntotal = 0;
-            // for (int lane = 0; lane < decoder->nlanes; ++lane)
-            // {
-            //     for (int y = 0; y < 512; ++y)                                 // row
-            //         for (int x = (lane * 1024); x < ((lane + 1) * 1024); ++x) // column
-            //         {
-            //             ntot[lane] += hitmap[y * decoder->nlanes * 1024 + x];
-            //             if (hitmap[y * decoder->nlanes * 1024 + x] != 0)
-            //             {
-            //                 FeeID_hit.push_back(decoder->feeid);
-            //                 Lane_hit.push_back(lane);
-            //                 ChipID_hit.push_back(decoder->chipIds[lane]);
-            //                 RowID_hit.push_back(y);
-            //                 ColumnID_hit.push_back(x);
-            //             }
-            //         }
-            //     // printf("[%lu] hits in lane %d chip id %u\n", ntot[lane], lane, decoder->chipIds[lane]);
-            //     ntotal += ntot[lane];
-            // }
-
             event = nHB - 1;
             Nhits = nhits;
 
             tree->Fill();
 
-            // _mm_free(hitmap); // Free the memory allocated for hitmap
             CleanVec(FeeID_hit);
             CleanVec(Lane_hit);
             CleanVec(ChipID_hit);
@@ -1086,28 +1048,6 @@ void run_fhrana(struct decoder_t *decoder, string &prefix)
     }
 
     std::cout << std::endl;
-
-    // ostringstream fname;
-    // fname << prefix << ((prefix != "") ? "_" : "") << "hitmap_" << decoder->feeid << ".dat";
-    // ofstream fhitmap(fname.str().data(), ios_base::trunc);
-    // fhitmap.write(reinterpret_cast<char *>(hitmap), decoder->nlanes * 1024 * 512 * sizeof(uint32_t));
-    // fhitmap.close();
-
-    // size_t ntot[decoder->nlanes] = {0, 0, 0};
-    // size_t ntotal = 0;
-    // for (int lane = 0; lane < decoder->nlanes; ++lane)
-    // {
-    //     for (int y = 0; y < 512; ++y)
-    //         for (int x = (lane * 1024); x < ((lane + 1) * 1024); ++x)
-    //         {
-    //             ntot[lane] += hitmap[y * decoder->nlanes * 1024 + x];
-    //         }
-    //     printf("[%lu] hits in lane %d chip id %u\n", ntot[lane], lane, decoder->chipIds[lane]);
-    //     ntotal += ntot[lane];
-    // }
-    // printf("Total number of hits: %lu. \n", ntotal);
-    // printStat(nHB, nHB_with_data, nTrg_with_data);
-    // printTrgCnts(decoder);
 }
 
 void get_all_feeids(decoder_t *decoder)
