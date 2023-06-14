@@ -35,11 +35,12 @@ SHELL:=/bin/bash
 ##-----------------------------------------------------------------------------
 DECODER=mvtx-decoder
 DEPS=utils.h progressbar.h
+CFLAGS = $(shell root-config --cflags --libs)
 #targets
 all: $(DECODER)
 
 $(DECODER): $(DECODER).cpp $(DEPS)
-	g++ --std=c++17 -march=native -gdwarf-4 -pedantic -Wall -O3 -o $(DECODER) $(DECODER).cpp -lm -g
+	g++ ${CFLAGS} --std=c++17 -march=native -gdwarf-4 -pedantic -Wall -O3 -o $(DECODER) $(DECODER).cpp -lm -g
 
 clean:
 	rm -f $(DECODER)

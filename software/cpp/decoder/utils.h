@@ -18,6 +18,36 @@ namespace
   }
 }
 
+namespace Trg
+{
+  enum BitMap
+  {
+    ORBIT   = 0,
+    HB      = 1,
+    HBr     = 2,
+    HC      = 3,
+    PHYSICS = 4,
+    PP      = 5,
+    CAL     = 6,
+    SOT     = 7,
+    EOT     = 8,
+    SOC     = 9,
+    EOC     = 10,
+    TF      = 11,
+    FE_RST  = 12,
+    RT      = 13,
+    RS      = 14,
+    nBitMap = 15
+  };
+
+  static const BitMap allBitMap[] =
+  { ORBIT, HB, HBr, HC, PHYSICS, PP, CAL, SOT, EOT, SOC, EOC, TF, FE_RST, RT, RS };
+
+  std::array<std::string, BitMap::nBitMap> BitMapName =
+  {{ {"ORBIT"}, {"HB"}, {"HBr"}, {"HC"}, {"PHYSICS"}, {"PP"}, {"CAL"}, {"SOT"}, {"EOT"}, {"SOC"}, {"EOC"},
+     {"TF"}, {"FE_RST"}, {"RT"}, {"RS"} }};
+}
+
 
 struct rdh_t
 {
@@ -42,7 +72,9 @@ struct rdh_t
   uint8_t  pages_count;
   uint16_t rdhGBTcounter; // 10 bits
 
-rdh_t() = default;
+  std::vector<std::string> trgVector = {};
+
+  rdh_t() = default;
   ~rdh_t() = default;
 
   void decode(uint8_t* rdh_ptr)
@@ -66,6 +98,16 @@ rdh_t() = default;
     stopBit       = *(reinterpret_cast<uint8_t*>(rdh_ptr + 58) ) & 0xFF;
     priority      = *(reinterpret_cast<uint8_t*>(rdh_ptr + 59) ) & 0xFF;
     rdhGBTcounter = *(reinterpret_cast<uint16_t*>(rdh_ptr + 62) ) & 0xFFFF;
+
+//    for ( const auto& trg : Trg::allBitMap )
+//    {
+//      if ( ((trgType >> trg) & 1) == 1 )
+//      {
+//        trgVector.push_back(Trg::BitMapName[trg]);
+//      }
+//    }
+//    assert(std::find(trgVector.begin(), trgVector.end(), "PP") == trgVector.end() );
+//    assert(std::find(trgVector.begin(), trgVector.end(), "CAL") == trgVector.end() );
   }
 };
 
@@ -81,7 +123,7 @@ struct tdh_t
 
   inline void decode(uint8_t* ptr)
   {
-    trigger_type     = ( (ptr[1] & 0x0F) << 8) | ptr[0];
+    trigger_type     = ((ptr[1] & 0x0F) << 8) | ptr[0];
     internal_trigger = (ptr[1] >> 4) & 0x1;
     no_data          = (ptr[1] >> 5) & 0x1;
     continuation     = (ptr[1] >> 6) & 0x1;
