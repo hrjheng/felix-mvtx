@@ -16,6 +16,7 @@ gcc --std=gnu99 -march=native -lm -O3 -o decoder decoder.c
 #include <memory>
 #include <set>
 #include <sstream>
+#include <stdlib.h>
 #include <vector>
 
 #include <immintrin.h>
@@ -70,7 +71,7 @@ struct decoder_t
 
     uint32_t evt_cnts[Trg::BitMap::nBitMap] = {};
 
-    decoder_t(std::string &flName) : filebuf_size(8192 * 1001), lanebuf_size(1024 * 1024), hitsbuf_size(10000), nbytesleft(0), nbytesread(0), thscan_nInj(0), thscan_nChg(0)
+    decoder_t(std::string &flName) : filebuf_size(8192 * 1001), lanebuf_size(1024 * 1024), hitsbuf_size(100000), nbytesleft(0), nbytesread(0), thscan_nInj(0), thscan_nChg(0)
     {
         // TODO: check meaningfullness of params...
         file.open(flName, std::ios::binary);
@@ -134,6 +135,7 @@ struct decoder_t
 };
 
 uint32_t nHB = 0, nHB_with_data = 0, nTrg_with_data = 0;
+uint64_t BCOnum = 0;
 
 void reset_stat()
 {
@@ -485,9 +487,12 @@ static inline void decoder_decode_lanes_into_hits(decoder_t *decoder)
     uint8_t chipId = 0xFF;
     for (int i = 0; i < decoder->nlanes; ++i)
     {
-        decode(decoder->lanebuffer + decoder->lanebuf_size * i, decoder->lane_ends[i], decoder->hits_end, chipId);
-        assert(chipId != 0xFF);
-        decoder->chipIds[i] = chipId;
+        if (decoder->lanebuffer + decoder->lanebuf_size * i != decoder->lane_ends[i])
+        {
+            decode(decoder->lanebuffer + decoder->lanebuf_size * i, decoder->lane_ends[i], decoder->hits_end, chipId);
+            // assert(chipId != 0xFF);
+            decoder->chipIds[i] = chipId;
+        }
     }
 }
 
@@ -627,6 +632,7 @@ static inline EXIT_CODE decoder_read_event_into_lanes(decoder_t *decoder)
         if (!rdh.packetCounter)
         {
             nHB++;
+            BCOnum = rdh.orbit;
             // TODO add couter per trigger bit asserted in the event
             // TODO check right protocol for SOC/EOC or SOT/EOT
             decoder->packet_init(true);
@@ -934,29 +940,35 @@ void run_thrana(struct decoder_t *decoder, string &prefix, const int &n_vcasn_it
 
 void run_fhrana(struct decoder_t *decoder, string &prefix)
 {
-    TFile *outfile = new TFile("fhrana_test.root", "RECREATE");
+    // create another string, remove all characters after the last "_" in prefix
+    string dir_prefix = prefix.substr(0, prefix.find_last_of("_"));
+    system(Form("mkdir -p ./fhrana_tree/%s", dir_prefix.c_str()));
+
+    TFile *outfile = new TFile(Form("./fhrana_tree/%s/fhrana_%s.root", dir_prefix.c_str(), prefix.c_str()), "RECREATE");
     TTree *tree = new TTree("tree_fhrana", "tree_fhrana");
-    uint32_t event;
-    int Nhits;
-    vector<uint32_t> FeeID_hit;
-    vector<int> Lane_hit;
-    vector<uint8_t> ChipID_hit;
-    vector<int> RowID_hit, ColumnID_hit;
+    int event, Nhits;
+    uint64_t BCO;
+    vector<uint32_t> FEEID_hit;
+    vector<int> Lane_hit, Stave_hit, ChipID_hit, Layer_hit, RowID_hit, ColumnID_hit;
 
     tree->Branch("event", &event);
+    tree->Branch("BCO", &BCO);
     tree->Branch("Nhits", &Nhits);
+    tree->Branch("FEEID_hit", &FEEID_hit);
     tree->Branch("Lane_hit", &Lane_hit);
-    tree->Branch("FeeID_hit", &FeeID_hit);
+    tree->Branch("Stave_hit", &Stave_hit);
     tree->Branch("ChipID_hit", &ChipID_hit);
+    tree->Branch("Layer_hit", &Layer_hit);
     tree->Branch("RowID_hit", &RowID_hit);
     tree->Branch("ColumnID_hit", &ColumnID_hit);
 
     std::cout << "Runing FHR analysis for feeid " << decoder->feeid << "..." << std::endl;
-    uint32_t print_hb_cnt = 1000;
-    progressbar bar(100);
-    ostringstream ss;
-    ss << " out of " << (print_hb_cnt * 100) << " events.";
-    bar.set_tail_s(ss.str());
+    // uint32_t print_hb_cnt = 1000;
+    // progressbar bar(100);
+    // ostringstream ss;
+    // ss << " out of " << (print_hb_cnt * 100) << " events.";
+    // bar.set_tail_s(ss.str());
+
     // uint32_t *hitmap = reinterpret_cast<uint32_t *>(_mm_malloc(3 * 1024 * 512 * sizeof(uint32_t), 4096));
     // bzero(hitmap, 3 * 1024 * 512 * sizeof(uint32_t));
 
@@ -967,24 +979,26 @@ void run_fhrana(struct decoder_t *decoder, string &prefix)
 
     while (true)
     {
+
         EXIT_CODE ret = check_next_event(decoder);
 
-        if (!(nHB % print_hb_cnt))
+        if (nHB % 100000 == 0)
         {
-            bar.update();
+            cout << "Number of heart beats processed = " << nHB << endl;
         }
-        if (nHB && (!(nHB % (100 * print_hb_cnt))))
-        {
-            std::cout << std::endl;
-            bar.reset();
-        }
+
+        // if (!(nHB % print_hb_cnt))
+        // {
+        //     bar.update();
+        // }
+        // if (nHB && (!(nHB % (100 * print_hb_cnt))))
+        // {
+        //     std::cout << std::endl;
+        //     bar.reset();
+        // }
 
         if (ret == DONE)
         {
-            outfile->cd();
-            tree->Write("", TObject::kWriteDelete);
-            outfile->Close();
-
             break;
         }
         else if (ret == HB_DATA_DONE)
@@ -1009,43 +1023,68 @@ void run_fhrana(struct decoder_t *decoder, string &prefix)
                 // [15th to 12th] are not used
                 // [24th to 16th] for row ID (9 bits), counting from the right
                 uint32_t row = (decoder->hitsbuffer[i] >> 16) & 0x1FF;
+
+                // https://gitlab.cern.ch/sphenix-mvtx/felix-mvtx/-/blob/bnl_dev/software/py/ib_tools/analysis/fhrana_c.py#L94-96
+                unsigned int layer = (decoder->feeid & 0x7000) >> 12;
+                unsigned int gbt_channel = (decoder->feeid & 0x0300) >> 8;
+                unsigned int stave = decoder->feeid & 0x003f;
+                // https://gitlab.cern.ch/sphenix-mvtx/felix-mvtx/-/blob/bnl_dev/software/py/ib_tools/analysis/fhrana_c.py#L47 ("chip" is lane)
+                unsigned int chipid = gbt_channel * 3 + lane;
                 // [31th to 25th] are not used
 
                 // std::cout << "column = " << std::bitset<32>(column) << std::endl;
                 // std::cout << "lane = " << std::bitset<32>(lane) << std::endl;
                 // std::cout << "row = " << std::bitset<32>(row) << std::endl;
 
-                FeeID_hit.push_back(decoder->feeid);
+                FEEID_hit.push_back(decoder->feeid);
                 Lane_hit.push_back(static_cast<int>(lane));
-                ChipID_hit.push_back(decoder->chipIds[static_cast<int>(lane)]);
+                Stave_hit.push_back(static_cast<int>(stave));
+                ChipID_hit.push_back(static_cast<int>(chipid));
+                Layer_hit.push_back(static_cast<int>(layer));
                 RowID_hit.push_back(static_cast<int>(row));
                 ColumnID_hit.push_back(static_cast<int>(column));
 
                 ++unique_row_count[static_cast<int>(row)];
             }
 
-            event = nHB - 1;
+            event = static_cast<int>(nHB) - 1;
+            BCO = BCOnum;
             Nhits = nhits;
 
             tree->Fill();
 
-            CleanVec(FeeID_hit);
+            // Autosave ttree every 500 events
+            // if (nHB % 500 == 0)
+            //     tree->AutoSave("Overwrite");
+
+            CleanVec(FEEID_hit);
             CleanVec(Lane_hit);
+            CleanVec(Stave_hit);
             CleanVec(ChipID_hit);
+            CleanVec(Layer_hit);
             CleanVec(RowID_hit);
             CleanVec(ColumnID_hit);
         }
         else if (ret == HB_NO_DATA_DONE)
+        {
             continue;
+        }
         else
             exit(-1);
     }
+
     std::cout << std::endl;
 
-    for (auto const &pair : unique_row_count)
-    {
-        std::cout << pair.first << " : " << pair.second << std::endl;
-    }
+    printStat(nHB, nHB_with_data, nTrg_with_data);
+
+    // for (auto const &pair : unique_row_count)
+    // {
+    //     std::cout << pair.first << " : " << pair.second << std::endl;
+    // }
+
+    outfile->cd();
+    tree->Write("", TObject::kWriteDelete);
+    outfile->Close();
 
     std::cout << std::endl;
 }
@@ -1066,7 +1105,7 @@ void get_all_feeids(decoder_t *decoder)
     ss << "[ ";
     for (auto &_feeid : decoder->feeids)
     {
-        ss << _feeid << ((_feeid == decoder->feeids.back()) ? "" : ", ");
+        ss << _feeid << ((_feeid == decoder->feeids.back()) ? "" : " ");
     }
     ss << " ]";
 

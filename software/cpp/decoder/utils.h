@@ -7,7 +7,6 @@
 #define log_error(M, ...) fprintf(stderr, "[ERROR] (%s:%d: errno: %s) " M "\n", __FILE__, __LINE__, clean_errno(), ##__VA_ARGS__)
 #define ASSERT(A, D, M,...) if(!(A)) { save_block(D); log_error(M, ##__VA_ARGS__); assert(A); }
 
-
 namespace
 {
   template <class T>
@@ -49,7 +48,7 @@ namespace Trg
 }
 
 
-struct rdh_t
+struct rdh_t // Raw Data Header
 {
   // FLX header
   uint8_t flxId;    // [23]
@@ -63,7 +62,7 @@ struct rdh_t
   uint16_t feeId;
   uint8_t sourceId;
   uint32_t detectorField;
-  uint64_t orbit;
+  uint64_t orbit; // -> BCO
   uint16_t bc;
   uint32_t trgType;
   uint16_t packetCounter;
@@ -91,8 +90,8 @@ struct rdh_t
     feeId         = *(reinterpret_cast<uint16_t*>(rdh_ptr + 34) ) & 0xFFFF;
     sourceId      = *(reinterpret_cast<uint8_t*>(rdh_ptr + 36) ) & 0xFF;
     detectorField = *(reinterpret_cast<uint32_t*>(rdh_ptr + 37) ) & 0xFFFFFFFF;
-    bc            = *(reinterpret_cast<uint16_t*>(rdh_ptr + 41) ) & 0xFFF;
-    orbit         = *(reinterpret_cast<uint64_t*>(rdh_ptr + 43) ) & 0xFFFFFFFFFF;
+    bc            = *(reinterpret_cast<uint16_t*>(rdh_ptr + 42) ) & 0xFFF;
+    orbit         = *(reinterpret_cast<uint64_t*>(rdh_ptr + 46) ) & 0xFFFFFFFFFF;
     trgType       = *(reinterpret_cast<uint32_t*>(rdh_ptr + 52) ) & 0xFFFFFFFF;
     packetCounter = *(reinterpret_cast<uint16_t*>(rdh_ptr + 56) ) & 0xFFFF;
     stopBit       = *(reinterpret_cast<uint8_t*>(rdh_ptr + 58) ) & 0xFF;
