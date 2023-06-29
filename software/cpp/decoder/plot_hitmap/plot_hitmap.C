@@ -382,7 +382,7 @@ void plot_hitmap(const char *prefix)
     // For now, only plot Stave L0_00
     // vector<int> EvtNum_ToPlot = {19, 436, 777, 1195, 1224, 1464, 1671, 1874, 2028, 2623, 2751, 4383, 6868, 16968, 17354, 19185, 23043, 32233, 45329, 55265, 55648, 67755, 79011, 91444, 93916, 95152, 144345, 168805, 194408}; // Run 14142, Yellow-beam only
     // vector<int> EvtNum_ToPlot = {16368, 19857, 31270, 46683, 55888, 98186, 123304, 161576, 219668, 313699}; // Run 14137, Blue-beam only, Test-run configuration
-    vector<int> EvtNum_ToPlot = {2162, 4560, 8060, 18786, 32397, 51800, 52125, 52126, 89680, 109681, 335567, 378530}; // Run 14138, Blue-beam only, Data-run configuration
+    // vector<int> EvtNum_ToPlot = {2162, 4560, 8060, 18786, 32397, 39072, 51800, 52125, 52126, 89680, 109681, 335567, 378530}; // Run 14138, Blue-beam only, Data-run configuration
     // vector<int> EvtNum_ToPlot = {-1}; // Run 14144, No beam
 
     for (size_t iflx = 0; iflx < FEEIDs.size(); iflx++)
